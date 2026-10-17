@@ -1,0 +1,1457 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" "="">
+		<style>
+			.intro {
+
+				transition: all .6s ease 0s;
+			}
+
+			[data-fls-loaded] .intro {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+			}
+		</style>
+		<style>
+			section:first-child::before{
+			content: '';
+		position: absolute;
+		bottom: -600px;
+		left: 0;
+		width: 100%;
+		height: 600px;
+		z-index: 20;
+		background-color: #FAFBFD;
+	}
+		[data-fls-loaded] section:first-child::before{
+			display: none;
+		}
+
+
+		body {
+			background-color: #FAFBFD;
+		}
+
+		body::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		body::-webkit-scrollbar-track {
+			background: #fff;
+		}
+
+		body::-webkit-scrollbar-thumb {
+			background-color: #1f2338;
+			border-radius: 4px;
+			border: 1px solid #fff;
+		}
+
+		html:not([data-fls-loaded]) * {
+			transition: all 0s !important;
+		}
+		.bottom-m-line {
+		position: fixed;
+		width: 100vw;
+		height: 4px;
+		bottom: 0px;
+		left: 0;
+		background-color: #FAFBFD;
+		z-index: 222;
+		display: none;
+		}
+		.bottom-m-line._active {
+		display: block;
+		}
+
+.top-m-line {
+  position: fixed;
+  width: 100vw;
+  height: 6px;
+  top: 0px;
+  left: 0;
+  background-color: #FAFBFD;
+  z-index: 99999999;
+  display: none;
+}
+.top-m-line._active {
+  display: block;
+}
+		.intro {
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			z-index: 100;
+			pointer-events: none;
+		}
+
+		[data-fls-loaded] .intro {
+			background-color: transparent;
+		}
+
+		.intro__shutter--top,
+		.intro__shutter--bottom {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 50%;
+			z-index: 5;
+			background: #FAFBFD;
+			will-change: transform;
+		}
+
+
+		.intro__shutter--top {
+			top: 0;
+			transition: all 1s cubic-bezier(0.65, 0, 0.35, 1);
+		}
+
+
+		.intro__shutter--bottom {
+			bottom: 0;
+			transition: all 1s cubic-bezier(0.65, 0, 0.35, 1);
+		}
+
+
+
+		.intro__logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 6;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			pointer-events: none;
+			mix-blend-mode: difference;
+		}
+
+		.intro__logo svg {
+			width: 14vw;
+			height: auto;
+			transition: all 1s ease 0.4s;
+		}
+
+		@media (max-width: 991.98px) {
+			.intro__logo svg {
+				width: 20vw;
+			}
+		}
+
+		@media (max-width: 575.98px) {
+			.intro__logo svg {
+				width: 40vw;
+			}
+		}
+		</style>
+		<link rel="preload" href="./assets/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Satoshi-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Satoshi-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Satoshi-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Satoshi-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Safiro-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Safiro-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Safiro-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Safiro-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="assets/img/favicon.ico">
+		<title>Catalog</title>
+		<script type="module" crossorigin="" src="./js/catalog.min.js?v=1792269555019"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1792269555019">
+		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1792269555019">
+		<link rel="modulepreload" crossorigin="" href="./js/parallax.min.js?v=1792269555019">
+		<link rel="modulepreload" crossorigin="" href="./js/mouse.min.js?v=1792269555019">
+		<link rel="modulepreload" crossorigin="" href="./js/menuinner.min.js?v=1792269555019">
+		<link rel="modulepreload" crossorigin="" href="./js/mainwholesale.min.js?v=1792269555019">
+		<link rel="modulepreload" crossorigin="" href="./js/mainproducts.min.js?v=1792269555019">
+		<link rel="modulepreload" crossorigin="" href="./js/innerpageinfo.min.js?v=1792269555019">
+		<link rel="modulepreload" crossorigin="" href="./js/breadcrumbs.min.js?v=1792269555019">
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1792269555019">
+		<link rel="stylesheet" crossorigin="" href="./css/marquee.min.css?v=1792269555019">
+		<link rel="stylesheet" crossorigin="" href="./css/menuinner.min.css?v=1792269555019">
+		<link rel="stylesheet" crossorigin="" href="./css/mainwholesale.min.css?v=1792269555019">
+		<link rel="stylesheet" crossorigin="" href="./css/mainproducts.min.css?v=1792269555019">
+		<link rel="stylesheet" crossorigin="" href="./css/innerpageinfo.min.css?v=1792269555019">
+		<link rel="stylesheet" crossorigin="" href="./css/breadcrumbs.min.css?v=1792269555019">
+		<link rel="stylesheet" crossorigin="" href="./css/catalog.min.css?v=1792269555019">
+	</head>
+	<body>
+		<div class="top-m-line"></div>
+		<div class="bottom-m-line"></div>
+		<div class="wrapper">
+			<div class="intro" data-fls-intro="">
+				<div class="intro__shutter--top"></div>
+				<div class="intro__shutter--bottom"></div>
+				<div class="intro__logo">
+					<svg width="142" height="120" viewbox="0 0 142 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M29.8632 107.591H28.2196V119.992H29.8632V107.591ZM45.5745 109.245H57.7541V107.591H43.9309V119.992H45.5745V114.614H55.4699V112.96H45.5661V109.245H45.5745ZM46.8473 58.223L90.8625 82.8899C97.3611 86.5283 100.218 91.3655 100.783 94.1935C104.618 88.7063 108.31 70.8857 93.1467 62.1653L47.53 37.701C44.3861 36.0971 43.3915 35.236 42.9532 31.91C41.8237 32.1379 40.3992 33.2522 39.3035 36.5361C35.3925 48.0422 39.5564 54.1541 46.8473 58.2146V58.223ZM46.7883 82.9406C46.7883 87.1615 50.2019 90.5719 54.4079 90.5719C58.6139 90.5719 62.0275 87.153 62.0275 82.9406C62.0275 78.7281 58.6139 75.3092 54.4079 75.3092C50.1935 75.3092 46.7883 78.7365 46.7883 82.9406ZM85.6535 116.978V115.99C85.6535 115.129 85.291 114.352 84.7179 113.795C85.2995 113.247 85.6535 112.461 85.6535 111.6V110.613C85.6535 108.941 84.3049 107.599 82.6528 107.599H71.8302V120H82.6528C84.3049 120 85.6535 118.649 85.6535 116.986V116.978ZM73.4738 109.245H82.6612C83.4114 109.245 84.0183 109.853 84.0183 110.613V111.6C84.0183 112.36 83.4114 112.968 82.6612 112.968H73.4738V109.237V109.245ZM73.4738 114.623H82.6612C83.4114 114.623 84.0183 115.23 84.0183 115.99V116.978C84.0183 117.729 83.4114 118.345 82.6612 118.345H73.4738V114.614V114.623ZM110.459 117.256L111.901 119.992H113.755L107.231 107.591H105.377L98.853 119.992H100.707L102.149 117.256H110.459ZM106.296 109.363L109.583 115.61H103.008L106.296 109.363ZM139.244 117.197C140.618 116.919 141.663 115.695 141.663 114.243V110.613C141.663 108.95 140.314 107.599 138.662 107.599H127.84V119.992H129.483V117.256H137.002L139.691 119.992H142L139.244 117.197ZM129.475 115.61V109.245H138.662C139.412 109.245 140.019 109.853 140.019 110.613V114.243C140.019 114.994 139.412 115.61 138.662 115.61H129.475ZM46.8473 26.3046L90.8625 50.9715C97.3611 54.6099 100.218 59.4471 100.783 62.2751C104.618 56.7879 108.31 38.9673 93.1467 30.2469L47.53 5.79107C44.3861 4.18713 43.3915 3.32606 42.9532 0C41.8237 0.227928 40.3992 1.34224 39.3035 4.6261C35.3925 16.1323 39.5564 22.2526 46.8473 26.3046ZM11.4042 117.197C12.7781 116.919 13.8232 115.695 13.8232 114.243V110.613C13.8232 108.95 12.4746 107.599 10.8226 107.599H0V119.992H1.64362V117.256H9.16211L11.8509 119.992H14.1604L11.4042 117.197ZM1.63519 115.61V109.245H10.8226C11.5727 109.245 12.1796 109.853 12.1796 110.613V114.243C12.1796 114.994 11.5727 115.61 10.8226 115.61H1.63519Z" fill="white"></path>
+					</svg>
+				</div>
+			</div>
+			<header data-fls-header="" data-fls-header-scroll="" class="header --inner-header">
+				<div class="header__container">
+					<svg class="line-element" width="1920" height="37" viewbox="0 0 1920 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path class="line-element-path" d="M801 1H807.849C819.692 1 830.626 7.34544 836.501 17.6274L837.499 19.3726C843.374 29.6546 854.308 36 866.151 36H1053.85C1065.69 36 1076.63 29.6547 1082.5 19.3729L1083.5 17.6274C1089.37 7.34553 1100.31 1.00021 1112.15 1.00021H1119" stroke="#9AA3B6" stroke-opacity="0.3" stroke-width="2"></path>
+						<path d="M1119 0C1119 0.666667 1119 1.33333 1119 2C1132.35 1.98333 1145.7 1.96667 1159.05 1.95C1399.35 1.65 1639.65 1.35 1879.95 1.05C1893.3 1.03333 1906.65 1.01667 1920 1C1906.65 0.983333 1893.3 0.966667 1879.95 0.95C1639.65 0.65 1399.35 0.35 1159.05 0.05C1145.7 0.0333334 1132.35 0.0166667 1119 0Z" fill="#9AA3B6" fill-opacity="0.3"></path>
+						<path d="M801 2C801 1.33333 801 0.666667 801 0C787.65 0.0166655 774.3 0.033331 760.95 0.0499965C520.65 0.349976 280.35 0.649954 40.05 0.949933C26.7 0.966599 13.35 0.983264 -8.74228e-08 0.99993C13.35 1.0166 26.7 1.03327 40.05 1.04993C280.35 1.34995 520.65 1.64998 760.95 1.95C774.3 1.96666 787.65 1.98333 801 2Z" fill="#9AA3B6" fill-opacity="0.3"></path>
+					</svg>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul>
+								<li>
+									<button class="menu__link" type="button">Products</button>
+									<div class="submenu-header --products-submenu">
+										<div class="submenu-header__wrapper">
+											<ul>
+												<li>
+													<a href="mixpro.html">
+														<p>
+															<span>MixPro</span>
+														</p>
+														<span class="submenu-header__link--info">DISPOSABLE / Rechargeable</span>
+													</a>
+												</li>
+												<li>
+													<a href="slim.html">
+														<p>
+															<span>Turbo-X Slim</span>
+														</p>
+														<span class="submenu-header__link--info">DISPOSABLE / Rechargeable</span>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<p>
+															<span>Lunux</span>
+															<span>soon</span>
+														</p>
+														<span class="submenu-header__link--info">DISPOSABLE / Rechargeable</span>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<p>
+															<span>Lume</span>
+															<span>soon</span>
+														</p>
+														<span class="submenu-header__link--info">DISPOSABLE / Rechargeable</span>
+													</a>
+												</li>
+											</ul>
+											<div class="submenu-header__pictures pictures-submenu-header">
+												<img class="--active" src="./assets/img/header/submenu/02/01.jpg" alt="Image">
+												<img src="./assets/img/header/submenu/01/01.jpg" alt="Image">
+												<img src="./assets/img/header/submenu/01/01.jpg" alt="Image">
+												<img src="./assets/img/header/submenu/02/01.jpg" alt="Image">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<button class="menu__link" type="button">About Us</button>
+									<div class="submenu-header --list-submenu">
+										<div class="submenu-header__wrapper">
+											<ul>
+												<li>
+													<a href="about.html">
+														<p>
+															<span>about rifbar</span>
+														</p>
+													</a>
+												</li>
+												<li>
+													<a href="contacts.html">
+														<p>
+															<span>Contact Us</span>
+														</p>
+													</a>
+												</li>
+												<li>
+													<a href="faq.html">
+														<p>
+															<span>FAQ</span>
+														</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li>
+									<button class="menu__link" type="button">Wholesale</button>
+									<div class="submenu-header --list-submenu">
+										<div class="submenu-header__wrapper">
+											<ul>
+												<li>
+													<a href="">
+														<p>
+															<span>Vape wholesale</span>
+														</p>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<p>
+															<span>Disposable Vape Wholesale</span>
+														</p>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<p>
+															<span>Disposable Vape Wholesale</span>
+														</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li>
+									<a class="menu__link" href="news.html">Blog</a>
+								</li>
+								<li>
+									<a class="menu__link" href="events.html">Events</a>
+								</li>
+								<li>
+									<a class="menu__link" href="accessories.html">Accessories</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<a href="index.html" class="header__logo">
+						<svg class="mobile-logo" width="220" height="56" viewbox="0 0 220 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M78.3153 46.5178H79.1293V40.3346H78.3153V46.5178ZM93.6065 40.3346L91.2487 46.5178H92.0908L92.6732 44.8999H95.2557L95.8452 46.5178H96.6802L94.3223 40.3346H93.6136H93.6065ZM92.9118 44.2316L93.9574 41.3405L95.0101 44.2316H92.9118ZM84.1819 43.5141C83.8942 43.3383 83.4942 43.1835 82.982 43.0358C82.4697 42.8881 82.1048 42.7333 81.8942 42.5575C81.6837 42.3816 81.5714 42.1706 81.5714 41.9173C81.5714 41.6641 81.6837 41.3546 81.9083 41.1787C82.1328 41.0029 82.4486 40.9114 82.8486 40.9114C83.2486 40.9114 83.6135 41.017 83.8521 41.235C84.0907 41.446 84.21 41.7415 84.21 42.1213H85.0241C85.0241 41.7767 84.9328 41.4601 84.7504 41.1717C84.5679 40.8833 84.3083 40.6582 83.9784 40.4894C83.6486 40.3276 83.2697 40.2432 82.8486 40.2432C82.224 40.2432 81.7258 40.405 81.3328 40.7215C80.9469 41.0381 80.7504 41.446 80.7504 41.9314C80.7504 42.4168 80.9118 42.7263 81.2276 43.0147C81.5433 43.3101 82.0556 43.5563 82.7504 43.7533C83.3048 43.9151 83.6907 44.0769 83.9012 44.2457C84.1118 44.4145 84.217 44.6467 84.217 44.9491C84.217 45.2516 84.1048 45.4908 83.8732 45.6666C83.6416 45.8425 83.3188 45.9269 82.8837 45.9269C82.4486 45.9269 82.0556 45.8214 81.7819 45.6033C81.5083 45.3852 81.3679 45.0898 81.3679 44.717H80.5539C80.5539 45.0757 80.6521 45.3993 80.8556 45.6807C81.0521 45.9621 81.3398 46.1872 81.7048 46.349C82.0697 46.5107 82.4697 46.5952 82.8907 46.5952C83.5434 46.5952 84.0627 46.4474 84.4556 46.145C84.8486 45.8425 85.0381 45.4415 85.0381 44.9421C85.0381 44.4427 84.9679 44.3512 84.8276 44.1191C84.6872 43.8869 84.4697 43.683 84.1819 43.5071V43.5141ZM89.6416 43.5141C89.3539 43.3383 88.9539 43.1835 88.4416 43.0358C87.9293 42.8881 87.5644 42.7333 87.3539 42.5575C87.1434 42.3816 87.0311 42.1706 87.0311 41.9173C87.0311 41.6641 87.1434 41.3546 87.3679 41.1787C87.5925 41.0029 87.9083 40.9114 88.3083 40.9114C88.7083 40.9114 89.0732 41.017 89.3118 41.235C89.5504 41.446 89.6697 41.7415 89.6697 42.1213H90.4837C90.4837 41.7767 90.3925 41.4601 90.21 41.1717C90.0276 40.8833 89.7679 40.6582 89.4381 40.4894C89.1083 40.3276 88.7293 40.2432 88.3083 40.2432C87.6837 40.2432 87.1855 40.405 86.7925 40.7215C86.4065 41.0381 86.21 41.446 86.21 41.9314C86.21 42.4168 86.3714 42.7263 86.6872 43.0147C87.003 43.3101 87.5153 43.5563 88.21 43.7533C88.7644 43.9151 89.1504 44.0769 89.3609 44.2457C89.5714 44.4145 89.6767 44.6467 89.6767 44.9491C89.6767 45.2516 89.5644 45.4908 89.3329 45.6666C89.1013 45.8425 88.7785 45.9269 88.3434 45.9269C87.9083 45.9269 87.5153 45.8214 87.2416 45.6033C86.9679 45.3852 86.8276 45.0898 86.8276 44.717H86.0135C86.0135 45.0757 86.1118 45.3993 86.3153 45.6807C86.5118 45.9621 86.7995 46.1872 87.1644 46.349C87.5293 46.5107 87.9293 46.5952 88.3504 46.5952C89.003 46.5952 89.5223 46.4474 89.9153 46.145C90.3083 45.8425 90.4978 45.4415 90.4978 44.9421C90.4978 44.4427 90.4276 44.3512 90.2872 44.1191C90.1469 43.8869 89.9293 43.683 89.6416 43.5071V43.5141ZM74.0416 40.3346L71.6837 46.5178H72.5258L73.1082 44.8999H75.6907L76.2802 46.5178H77.1153L74.7574 40.3346H74.0486H74.0416ZM73.3538 44.2316L74.3995 41.3405L75.4521 44.2316H73.3538ZM61.2836 43.6548H63.9573V42.9866H61.2836V40.9958H64.3433V40.3276H60.4696V46.5107H64.3854V45.8425H61.2836V43.6548ZM69.6415 45.118L66.5257 40.3346H65.7117V46.5178H66.5257V41.7556L69.6275 46.5178H70.4415V40.3346H69.6345V45.118H69.6415ZM149.151 46.5178H149.965V40.3346H149.151V46.5178ZM147.172 40.8481C146.786 40.5035 146.259 40.3276 145.586 40.3276H143.312V46.5107H144.126V44.0909H145.579C146.273 44.0909 146.814 43.9292 147.186 43.6056C147.558 43.282 147.747 42.8177 147.747 42.2198C147.747 41.6219 147.558 41.1928 147.172 40.8481ZM146.582 43.1202C146.351 43.3242 146.021 43.4297 145.586 43.4297H144.126V41.0029H145.635C146.042 41.0099 146.358 41.1295 146.589 41.3476C146.821 41.5656 146.933 41.8611 146.933 42.2339C146.933 42.6067 146.814 42.9162 146.589 43.1272L146.582 43.1202ZM121.543 40.609C121.165 40.3698 120.729 40.2502 120.238 40.2502C119.747 40.2502 119.319 40.3698 118.947 40.616C118.575 40.8622 118.28 41.2069 118.07 41.6641C117.866 42.1213 117.761 42.6419 117.761 43.2398V43.683C117.761 44.2668 117.873 44.7803 118.084 45.2235C118.294 45.6666 118.582 46.0043 118.961 46.2434C119.34 46.4826 119.768 46.6022 120.252 46.6022C120.736 46.6022 121.186 46.4826 121.558 46.2434C121.929 46.0043 122.217 45.6596 122.421 45.2094C122.624 44.7592 122.722 44.2316 122.722 43.6267V43.2328C122.722 42.6278 122.624 42.1002 122.421 41.65C122.217 41.1928 121.929 40.8481 121.551 40.609H121.543ZM121.915 43.683C121.908 44.4005 121.761 44.9491 121.473 45.336C121.186 45.7229 120.779 45.9128 120.252 45.9128C119.726 45.9128 119.319 45.7088 119.024 45.3008C118.729 44.8929 118.575 44.3371 118.575 43.6267V43.1694C118.582 42.4731 118.736 41.9314 119.031 41.5375C119.326 41.1436 119.733 40.9466 120.245 40.9466C120.758 40.9466 121.186 41.1436 121.48 41.5375C121.775 41.9314 121.922 42.4942 121.922 43.2257V43.683H121.915ZM133.866 45.4345L132.112 40.3346H131.228L133.508 46.5178H134.231L136.519 40.3346H135.628L133.866 45.4345ZM124.252 46.5178H125.066V43.7885H127.656V43.1202H125.066V41.0029H128.077V40.3346H124.259V46.5178H124.252ZM139.094 40.3346L136.737 46.5178H137.579L138.161 44.8999H140.744L141.333 46.5178H142.168L139.81 40.3346H139.101H139.094ZM138.4 44.2316L139.445 41.3405L140.498 44.2316H138.4ZM155.698 45.118L152.582 40.3346H151.761V46.5178H152.582V41.7556L155.684 46.5178H156.505V40.3346H155.698V45.118ZM159.305 41.4882C159.586 41.1014 160 40.9114 160.547 40.9114C161.368 40.9114 161.852 41.3194 162.007 42.1424H162.821C162.737 41.5375 162.491 41.0662 162.098 40.7426C161.705 40.412 161.186 40.2502 160.54 40.2502C159.895 40.2502 159.144 40.5035 158.716 41.017C158.28 41.5305 158.063 42.248 158.063 43.1835V43.7252C158.063 44.302 158.175 44.8084 158.393 45.2446C158.603 45.6807 158.905 46.0183 159.298 46.2505C159.691 46.4896 160.133 46.6022 160.638 46.6022C161.144 46.6022 161.572 46.5248 161.944 46.3771C162.316 46.2294 162.61 46.0043 162.821 45.7018V43.4368H160.582V44.105H162.007V45.4908C161.859 45.6526 161.67 45.7651 161.438 45.8354C161.207 45.9058 160.94 45.9339 160.638 45.9339C160.098 45.9339 159.67 45.7299 159.354 45.3219C159.038 44.9139 158.877 44.3582 158.877 43.6689V43.1624C158.877 42.4308 159.024 41.8751 159.305 41.4953V41.4882ZM58.7082 43.1976C58.9187 42.9092 59.0169 42.5786 59.0169 42.1917C59.0169 41.5867 58.8275 41.1225 58.4555 40.8059C58.0836 40.4894 57.5503 40.3276 56.8555 40.3276H54.8134V46.5107H55.6275V44.0065H57.0731L58.4134 46.5107H59.2836V46.4615L57.838 43.8377C58.2099 43.697 58.4976 43.486 58.7012 43.1976H58.7082ZM56.8766 43.3453H55.6275V40.9958H56.8696C57.2976 40.9958 57.6275 41.1014 57.852 41.3054C58.0766 41.5094 58.1959 41.8048 58.1959 42.1846C58.1959 42.5645 58.0766 42.8177 57.838 43.0288C57.5994 43.2398 57.2766 43.3453 56.8766 43.3453ZM105.361 41.4953C105.656 41.1084 106.063 40.9185 106.582 40.9185C107.101 40.9185 107.333 41.031 107.572 41.2491C107.81 41.4672 107.957 41.8259 108.028 42.3253H108.849C108.786 41.6782 108.554 41.1717 108.161 40.8059C107.768 40.4401 107.242 40.2572 106.582 40.2572C105.922 40.2572 105.656 40.3768 105.277 40.609C104.898 40.8411 104.61 41.1787 104.407 41.6149C104.203 42.051 104.098 42.5575 104.098 43.1272V43.7252C104.098 44.6044 104.315 45.3008 104.757 45.8284C105.2 46.349 105.782 46.6163 106.512 46.6163C107.242 46.6163 107.726 46.4404 108.126 46.0816C108.533 45.7299 108.772 45.2235 108.849 44.5693H108.028C107.95 45.0757 107.789 45.4345 107.543 45.6385C107.305 45.8425 106.954 45.948 106.505 45.948C106.056 45.948 105.614 45.751 105.333 45.3501C105.052 44.9562 104.912 44.4216 104.912 43.7463V43.1483C104.912 42.4379 105.059 41.8892 105.354 41.5023L105.361 41.4953ZM111.087 43.6548H113.761V42.9866H111.087V40.9958H114.147V40.3276H110.273V46.5107H114.189V45.8425H111.087V43.6548ZM101.747 45.118L98.6311 40.3346H97.8171V46.5178H98.6311V41.7556L101.733 46.5178H102.547V40.3346H101.74V45.118H101.747ZM32.8765 36.9582L5.77464 22.4113C3.90796 21.4616 3.31849 20.9481 3.05884 18.9715C2.38515 19.1051 1.54304 19.7664 0.89041 21.7219C-1.43241 28.5663 1.0448 32.196 5.36762 34.6087L31.5151 49.2752C35.3748 51.4347 37.073 54.3118 37.4098 56C39.6906 52.7361 41.88 42.1424 32.8765 36.9582ZM9.85887 44.7733C7.36061 44.7733 5.33253 46.8062 5.33253 49.3104C5.33253 51.8146 7.36061 53.8475 9.85887 53.8475C12.3571 53.8475 14.3852 51.8146 14.3852 49.3104C14.3852 46.8062 12.3571 44.7733 9.85887 44.7733ZM32.8765 17.9867L5.77464 3.43977C3.90796 2.49014 3.31849 1.97664 3.05884 0C2.38515 0.133652 1.54304 0.794873 0.89041 2.75041C-1.43241 9.59477 1.0448 13.2245 5.36762 15.6372L31.5151 30.3037C35.3748 32.4633 37.073 35.3403 37.4098 37.0215C39.6906 33.7576 41.88 23.1639 32.8765 17.9796V17.9867ZM216.147 31.9498C217.74 31.6262 218.94 30.2123 218.94 28.517V24.3105C218.94 22.3831 217.382 20.8074 215.467 20.8074H202.926V35.1855H204.828V32.0131H213.544L216.66 35.1855H219.333L216.154 31.9427L216.147 31.9498ZM204.828 30.1068V22.7278H215.467C216.337 22.7278 217.039 23.4383 217.039 24.3105V28.517C217.039 29.3893 216.33 30.0997 215.467 30.0997H204.828V30.1068ZM68.0345 31.9498C69.6275 31.6332 70.8275 30.2123 70.8275 28.517V24.3105C70.8275 22.3831 69.2696 20.8074 67.3538 20.8074H54.8134V35.1855H56.7152V32.0131H65.431L68.5468 35.1855H71.2205L68.0415 31.9427L68.0345 31.9498ZM56.7152 30.1068V22.7278H67.3538C68.224 22.7278 68.9258 23.4383 68.9258 24.3105V28.517C68.9258 29.3893 68.217 30.0997 67.3538 30.0997H56.7152V30.1068ZM107.628 28.9602H119.101V27.0469H107.628V22.7278H121.747V20.8145H105.733V35.1926H107.635V28.9602H107.628ZM89.4171 20.8074H87.5153V35.1855H89.4171V20.8074ZM154.063 31.6895V30.5429C154.063 29.544 153.642 28.6366 152.975 27.9965C153.649 27.3564 154.063 26.456 154.063 25.4571V24.3105C154.063 22.3831 152.505 20.8074 150.589 20.8074H138.049V35.1855H150.589C152.505 35.1855 154.063 33.6169 154.063 31.6824V31.6895ZM152.161 31.6895C152.161 32.5617 151.452 33.2722 150.589 33.2722H139.951V28.9531H150.589C151.459 28.9531 152.161 29.6636 152.161 30.5359V31.6824V31.6895ZM152.161 25.4571C152.161 26.3294 151.452 27.0469 150.589 27.0469H139.951V22.7278H150.589C151.459 22.7278 152.161 23.4383 152.161 24.3175V25.4641V25.4571ZM176.905 20.8215L169.34 35.1926H171.495L173.165 32.0201H182.8L184.47 35.1926H186.624L179.059 20.8215H176.905ZM174.175 30.1068L177.986 22.8614L181.796 30.1068H174.175Z" fill="white"></path>
+						</svg>
+						<svg class="header__logo-01" width="142" height="95" viewbox="0 0 142 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_2019_359)">
+								<path d="M29.8633 107.591H28.2197V119.992H29.8633V107.591ZM45.5746 109.245H57.7542V107.591H43.931V119.992H45.5746V114.614H55.47V112.96H45.5662V109.245H45.5746ZM46.8473 58.2231L90.8625 82.89C97.3611 86.5284 100.218 91.3655 100.783 94.1935C104.618 88.7064 108.31 70.8857 93.1467 62.1654L47.5301 37.7011C44.3861 36.0971 43.3915 35.2361 42.9532 31.91C41.8238 32.1379 40.3993 33.2523 39.3036 36.5361C35.3926 48.0423 39.5564 54.1541 46.8473 58.2146V58.2231ZM46.7883 82.9406C46.7883 87.1615 50.202 90.572 54.408 90.572C58.6139 90.572 62.0276 87.1531 62.0276 82.9406C62.0276 78.7282 58.6139 75.3092 54.408 75.3092C50.1936 75.3092 46.7883 78.7366 46.7883 82.9406ZM85.6535 116.978V115.99C85.6535 115.129 85.2911 114.353 84.7179 113.795C85.2995 113.247 85.6535 112.462 85.6535 111.6V110.613C85.6535 108.941 84.3049 107.599 82.6529 107.599H71.8303V120H82.6529C84.3049 120 85.6535 118.649 85.6535 116.986V116.978ZM73.4739 109.245H82.6613C83.4115 109.245 84.0183 109.853 84.0183 110.613V111.6C84.0183 112.36 83.4115 112.968 82.6613 112.968H73.4739V109.237V109.245ZM73.4739 114.623H82.6613C83.4115 114.623 84.0183 115.23 84.0183 115.99V116.978C84.0183 117.729 83.4115 118.345 82.6613 118.345H73.4739V114.614V114.623ZM110.459 117.256L111.901 119.992H113.755L107.231 107.591H105.377L98.853 119.992H100.707L102.149 117.256H110.459ZM106.296 109.363L109.583 115.61H103.008L106.296 109.363ZM139.244 117.197C140.618 116.919 141.663 115.695 141.663 114.243V110.613C141.663 108.95 140.314 107.599 138.662 107.599H127.84V119.992H129.483V117.256H137.002L139.691 119.992H142L139.244 117.197ZM129.475 115.61V109.245H138.662C139.412 109.245 140.019 109.853 140.019 110.613V114.243C140.019 114.994 139.412 115.61 138.662 115.61H129.475ZM46.8473 26.3047L90.8625 50.9716C97.3611 54.61 100.218 59.4471 100.783 62.2751C104.618 56.788 108.31 38.9673 93.1467 30.247L47.5301 5.79112C44.3861 4.18718 43.3915 3.32612 42.9532 5.34058e-05C41.8238 0.227982 40.3993 1.3423 39.3036 4.62615C35.3926 16.1323 39.5564 22.2526 46.8473 26.3047ZM11.4042 117.197C12.7781 116.919 13.8233 115.695 13.8233 114.243V110.613C13.8233 108.95 12.4747 107.599 10.8226 107.599H6.30617e-05V119.992H1.64368V117.256H9.16217L11.851 119.992H14.1604L11.4042 117.197ZM1.63525 115.61V109.245H10.8226C11.5728 109.245 12.1797 109.853 12.1797 110.613V114.243C12.1797 114.994 11.5728 115.61 10.8226 115.61H1.63525Z" fill="white"></path>
+							</g>
+							<defs>
+								<clipPath id="clip0_2019_359">
+									<rect width="142" height="95" fill="white"></rect>
+								</clipPath>
+							</defs>
+						</svg>
+						<svg class="header__logo-02" width="142" height="13" viewbox="0 0 142 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_2019_360)">
+								<path d="M29.8633 0.59063H28.2197V12.9916H29.8633V0.59063ZM45.5746 2.24523H57.7542V0.59063H43.931V12.9916H45.5746V7.6142H55.47V5.9596H45.5662V2.24523H45.5746ZM46.8473 -48.7769L90.8625 -24.11C97.3611 -20.4716 100.218 -15.6345 100.783 -12.8065C104.618 -18.2936 108.31 -36.1143 93.1467 -44.8346L47.5301 -69.2989C44.3861 -70.9029 43.3915 -71.7639 42.9532 -75.09C41.8238 -74.8621 40.3993 -73.7477 39.3036 -70.4639C35.3926 -58.9577 39.5564 -52.8459 46.8473 -48.7854V-48.7769ZM46.7883 -24.0594C46.7883 -19.8385 50.202 -16.428 54.408 -16.428C58.6139 -16.428 62.0276 -19.8469 62.0276 -24.0594C62.0276 -28.2718 58.6139 -31.6908 54.408 -31.6908C50.1936 -31.6908 46.7883 -28.2634 46.7883 -24.0594ZM85.6535 9.97791V8.9902C85.6535 8.12914 85.2911 7.35251 84.7179 6.79535C85.2995 6.24663 85.6535 5.46154 85.6535 4.60048V3.61279C85.6535 1.94131 84.3049 0.599075 82.6529 0.599075H71.8303V13.0001H82.6529C84.3049 13.0001 85.6535 11.6494 85.6535 9.98634V9.97791ZM73.4739 2.24523H82.6613C83.4115 2.24523 84.0183 2.85302 84.0183 3.61279V4.60048C84.0183 5.36024 83.4115 5.96806 82.6613 5.96806H73.4739V2.23678V2.24523ZM73.4739 7.62263H82.6613C83.4115 7.62263 84.0183 8.23044 84.0183 8.9902V9.97791C84.0183 10.7292 83.4115 11.3455 82.6613 11.3455H73.4739V7.6142V7.62263ZM110.459 10.2565L111.901 12.9916H113.755L107.231 0.59063H105.377L98.853 12.9916H100.707L102.149 10.2565H110.459ZM106.296 2.36341L109.583 8.61033H103.008L106.296 2.36341ZM139.244 10.1974C140.618 9.91881 141.663 8.69475 141.663 7.24276V3.61279C141.663 1.94975 140.314 0.599075 138.662 0.599075H127.84V12.9916H129.483V10.2565H137.002L139.691 12.9916H142L139.244 10.1974ZM129.475 8.61033V2.24523H138.662C139.412 2.24523 140.019 2.85302 140.019 3.61279V7.24276C140.019 7.99408 139.412 8.61033 138.662 8.61033H129.475ZM46.8473 -80.6953L90.8625 -56.0284C97.3611 -52.39 100.218 -47.5529 100.783 -44.7249C104.618 -50.212 108.31 -68.0327 93.1467 -76.753L47.5301 -101.209C44.3861 -102.813 43.3915 -103.674 42.9532 -107C41.8238 -106.772 40.3993 -105.658 39.3036 -102.374C35.3926 -90.8677 39.5564 -84.7474 46.8473 -80.6953ZM11.4042 10.1974C12.7781 9.91881 13.8233 8.69475 13.8233 7.24276V3.61279C13.8233 1.94975 12.4747 0.599075 10.8226 0.599075H6.30617e-05V12.9916H1.64368V10.2565H9.16217L11.851 12.9916H14.1604L11.4042 10.1974ZM1.63525 8.61033V2.24523H10.8226C11.5728 2.24523 12.1797 2.85302 12.1797 3.61279V7.24276C12.1797 7.99408 11.5728 8.61033 10.8226 8.61033H1.63525Z" fill="white"></path>
+							</g>
+							<defs>
+								<clipPath id="clip0_2019_360">
+									<rect width="142" height="13" fill="white"></rect>
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+					<div class="header__right">
+						<ul class="header__social" data-fls-dynamic=".social-mobile-menu, 1279.98,1">
+							<li>
+								<a class="--icon-01" href="#"></a>
+							</li>
+							<li>
+								<a class="--icon-02" href="#"></a>
+							</li>
+							<li>
+								<a class="--icon-03" href="#"></a>
+							</li>
+							<li>
+								<a class="--icon-04" href="#"></a>
+							</li>
+							<li>
+								<a class="--icon-05" href="#"></a>
+							</li>
+						</ul>
+						<div class="header__actions">
+							<a class="_btn-02 _border-light" href="#" data-fls-dynamic=".mobile-menu__nav, 1279.98,1">Log In</a>
+							<a class="_btn-02" href="become.html">Become a Seller</a>
+							<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+								<div class="icon-menu__box">
+									<span></span>
+								</div>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="mobile-menu">
+					<div class="mobile-menu__wrapper">
+						<div class="mobile-menu__container">
+							<nav class="mobile-menu__nav">
+								<ul class="mobile-menu__list">
+									<li class="mobile-menu__item">
+										<button type="button" class="mobile-menu__btn button --icon-06">Products</button>
+										<div class="mobile-menu__submenu submenu-mobile">
+											<div class="submenu-mobile__wrapper">
+												<div class="submenu-mobile__container">
+													<div class="submenu-mobile__head">
+														<button type="button" class="button submenu-mobile__close-btn --icon-06">Products</button>
+													</div>
+													<div class="submenu-mobile__items">
+														<a href="mixpro.html" class="submenu-mobile__item item-submenu-mobile">
+															<picture>
+																<source media="(max-width: 575.98px)" srcset="./assets/img/header/mobile-menu/products/04/01.jpg" type="image/jpg">
+																<source media="(max-width: 767.98px)" srcset="./assets/img/header/mobile-menu/products/03/01.jpg" type="image/jpg">
+																<source media="(max-width: 991.98px)" srcset="./assets/img/header/mobile-menu/products/02/01.jpg" type="image/jpg">
+																<img src="./assets/img/header/mobile-menu/products/01/01.jpg" alt="Image">
+															</picture>
+															<div class="item-submenu-mobile__bottom">
+																<div class="item-submenu-mobile__name">MIXPRO</div>
+																<div class="item-submenu-mobile__info">Disposable/rechargeable</div>
+															</div>
+														</a>
+														<a href="slim.html" class="submenu-mobile__item item-submenu-mobile">
+															<picture>
+																<source media="(max-width: 575.98px)" srcset="./assets/img/header/mobile-menu/products/04/02.jpg" type="image/jpg">
+																<source media="(max-width: 767.98px)" srcset="./assets/img/header/mobile-menu/products/03/02.jpg" type="image/jpg">
+																<source media="(max-width: 991.98px)" srcset="./assets/img/header/mobile-menu/products/02/02.jpg" type="image/jpg">
+																<img src="./assets/img/header/mobile-menu/products/01/02.jpg" alt="Image">
+															</picture>
+															<div class="item-submenu-mobile__bottom">
+																<div class="item-submenu-mobile__name">Turbo-X Slim</div>
+																<div class="item-submenu-mobile__info">Disposable/rechargeable</div>
+															</div>
+														</a>
+														<div class="submenu-mobile__item item-submenu-mobile">
+															<picture>
+																<source media="(max-width: 575.98px)" srcset="./assets/img/header/mobile-menu/products/04/03.jpg" type="image/jpg">
+																<source media="(max-width: 767.98px)" srcset="./assets/img/header/mobile-menu/products/03/03.jpg" type="image/jpg">
+																<source media="(max-width: 991.98px)" srcset="./assets/img/header/mobile-menu/products/02/03.jpg" type="image/jpg">
+																<img src="./assets/img/header/mobile-menu/products/01/03.jpg" alt="Image">
+															</picture>
+															<div class="item-submenu-mobile__bottom">
+																<div class="item-submenu-mobile__name">Turbo-X Slim</div>
+																<div class="item-submenu-mobile__info">Disposable/rechargeable</div>
+															</div>
+														</div>
+														<div class="submenu-mobile__item item-submenu-mobile">
+															<picture>
+																<source media="(max-width: 575.98px)" srcset="./assets/img/header/mobile-menu/products/04/04.jpg" type="image/jpg">
+																<source media="(max-width: 767.98px)" srcset="./assets/img/header/mobile-menu/products/03/04.jpg" type="image/jpg">
+																<source media="(max-width: 991.98px)" srcset="./assets/img/header/mobile-menu/products/02/04.jpg" type="image/jpg">
+																<img src="./assets/img/header/mobile-menu/products/01/04.jpg" alt="Image">
+															</picture>
+															<div class="item-submenu-mobile__bottom">
+																<div class="item-submenu-mobile__name">Turbo-X Slim</div>
+																<div class="item-submenu-mobile__info">Disposable/rechargeable</div>
+															</div>
+														</div>
+														<div class="submenu-mobile__item item-submenu-mobile">
+															<picture>
+																<source media="(max-width: 575.98px)" srcset="./assets/img/header/mobile-menu/products/04/05.jpg" type="image/jpg">
+																<source media="(max-width: 767.98px)" srcset="./assets/img/header/mobile-menu/products/03/05.jpg" type="image/jpg">
+																<source media="(max-width: 991.98px)" srcset="./assets/img/header/mobile-menu/products/02/05.jpg" type="image/jpg">
+																<img src="./assets/img/header/mobile-menu/products/01/05.jpg" alt="Image">
+															</picture>
+															<div class="item-submenu-mobile__bottom">
+																<div class="item-submenu-mobile__name">Turbo-X Slim</div>
+																<div class="item-submenu-mobile__info">Disposable/rechargeable</div>
+															</div>
+														</div>
+														<div class="submenu-mobile__item item-submenu-mobile">
+															<picture>
+																<source media="(max-width: 575.98px)" srcset="./assets/img/header/mobile-menu/products/04/06.jpg" type="image/jpg">
+																<source media="(max-width: 767.98px)" srcset="./assets/img/header/mobile-menu/products/03/06.jpg" type="image/jpg">
+																<source media="(max-width: 991.98px)" srcset="./assets/img/header/mobile-menu/products/02/06.jpg" type="image/jpg">
+																<img src="./assets/img/header/mobile-menu/products/01/06.jpg" alt="Image">
+															</picture>
+															<div class="item-submenu-mobile__bottom">
+																<div class="item-submenu-mobile__name">Turbo-X Slim</div>
+																<div class="item-submenu-mobile__info">Disposable/rechargeable</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="mobile-menu__item">
+										<button type="button" class="mobile-menu__btn button --icon-06">About Us</button>
+										<div class="mobile-menu__submenu submenu-mobile">
+											<div class="submenu-mobile__wrapper">
+												<div class="submenu-mobile__container">
+													<div class="submenu-mobile__head">
+														<button type="button" class="button submenu-mobile__close-btn --icon-06">About
+												Us</button>
+													</div>
+													<ul>
+														<li>
+															<a href="about.html">About RIFBAR</a>
+														</li>
+														<li>
+															<a href="contacts.html">Contact Us</a>
+														</li>
+														<li>
+															<a href="faq.html">FAQ</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="mobile-menu__item">
+										<button type="button" class="mobile-menu__btn button --icon-06">Wholesale</button>
+										<div class="mobile-menu__submenu submenu-mobile">
+											<div class="submenu-mobile__wrapper">
+												<div class="submenu-mobile__container">
+													<div class="submenu-mobile__head">
+														<button type="button" class="button submenu-mobile__close-btn --icon-06">Wholesale</button>
+													</div>
+													<ul>
+														<li>
+															<a href="#">Vape wholesale</a>
+														</li>
+														<li>
+															<a href="#">Disposable Vape Wholesale</a>
+														</li>
+														<li>
+															<a href="#">POD Vapes Wholesale</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="mobile-menu__item">
+										<a href="news.html">Blog</a>
+									</li>
+									<li class="mobile-menu__item">
+										<a href="events.html">Events</a>
+									</li>
+									<li class="mobile-menu__item">
+										<a href="accessories.html">Accessories</a>
+									</li>
+								</ul>
+							</nav>
+							<div class="mobile-menu__social social-mobile-menu">
+								<div class="social-mobile-menu__title">JOIN THE RUSH</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section data-fls-catalogmain="" class="catalogmain --first-inner-page-padding">
+					<div class="catalogmain__container">
+						<div data-fls-innerpageinfo="" class="inner-page-info">
+							<div class="inner-page-info__wrapper">
+								<ul data-fls-breadcrumbs="" class="inner-page-info__breadcrumbs breadcrumbs">
+									<li>
+										<a href="index.html">Rifbar</a>
+									</li>
+									<li>
+										<span>/ Catalog</span>
+									</li>
+								</ul>
+								<h1 class="inner-page-info__title _title">Catalog</h1>
+								<p class="inner-page-info__text _text">
+									One standard across the full lineup. Every RIFBAR product is designed
+					and
+					manufactured in-house, built
+					around performance, reliable construction, and the attention to detail that shows in everyday use.
+								</p>
+							</div>
+							<div class="catalogmain-decor" data-fls-parallax-parent="" data-fls-parallax-smooth="20">
+								<div class="catalogmain-decor__svg-box" data-fls-mouse="" data-fls-mouse-dyr="" data-fls-mouse-dxr="" data-fls-mouse-cx="200" data-fls-mouse-cy="100">
+									<svg class="catalogmain-decor__svg" width="218" height="115" viewbox="0 0 218 115" fill="none" data-fls-parallax="" data-fls-parallax-coefficient="25" data-fls-parallax-properties="rotate(-15deg)" xmlns="http://www.w3.org/2000/svg">
+										<path pathlength="1" d="M31.296 67.3919C30.0587 67.6053 28.9066 67.3706 27.84 66.6879C26.816 66.0053 26.1333 65.0453 25.792 63.8079C24.8533 60.4373 24.4267 56.8533 24.512 53.0559C24.64 49.2586 25.0453 45.4186 25.728 41.5359C26.4107 37.6533 27.264 33.8346 28.288 30.0799C29.3546 26.2826 30.3573 22.7413 31.296 19.4559C31.5947 18.4319 31.8933 17.3653 32.192 16.2559C32.5333 15.1466 32.8533 14.0586 33.152 12.9919C33.4506 11.8826 33.7066 10.8373 33.92 9.85594C34.1333 8.87461 34.304 8.04261 34.432 7.35994C33.7067 8.21328 32.832 9.47194 31.808 11.1359C30.8266 12.7573 29.8026 14.5493 28.736 16.5119C27.712 18.4746 26.688 20.4586 25.664 22.4639C24.6827 24.4693 23.808 26.2826 23.04 27.9039C21.0773 31.9999 19.3067 35.6479 17.728 38.8479C16.192 42.0053 14.7413 44.6719 13.376 46.8479C12.0106 49.0239 10.6666 50.6879 9.34398 51.8399C8.06398 52.9493 6.69865 53.5039 5.24798 53.5039C3.41332 53.5039 2.00532 52.7573 1.02398 51.2639C0.383982 50.2826 0.0639822 48.9386 0.0639822 47.2319C0.0213157 45.4826 0.191982 43.5413 0.575982 41.4079C0.959982 39.2319 1.53598 36.9493 2.30398 34.5599C3.02932 32.1706 3.86132 29.8239 4.79998 27.5199C5.78132 25.2159 6.82665 23.0399 7.93598 20.9919C9.04532 18.9439 10.1546 17.1946 11.264 15.7439C11.6906 15.1893 12.2453 14.9119 12.928 14.9119C13.3973 14.9119 13.8026 15.0613 14.144 15.3599C14.6133 15.6586 14.912 16.0639 15.04 16.5759C15.168 17.0879 15.1253 17.5786 14.912 18.0479C13.4613 21.2479 12.1386 24.4266 10.944 27.5839C9.74932 30.6986 8.72532 33.5999 7.87198 36.2879C7.06132 38.9333 6.46398 41.2586 6.07998 43.2639C5.69598 45.2266 5.56798 46.6559 5.69598 47.5519C6.46398 47.0826 7.38132 46.0373 8.44798 44.4159C9.51465 42.7519 10.624 40.8319 11.776 38.6559C12.928 36.4799 14.0586 34.2186 15.168 31.8719C16.32 29.4826 17.3653 27.3279 18.304 25.4079C20.1813 21.4826 21.9307 17.9626 23.552 14.8479C25.1733 11.7333 26.7093 9.06661 28.16 6.84794C29.6106 4.62928 30.9973 2.94394 32.32 1.79194C33.6853 0.597276 35.0293 -5.72205e-05 36.352 -5.72205e-05C37.8453 -5.72205e-05 38.9973 0.575943 39.808 1.72794C40.3627 2.41061 40.6827 3.30661 40.768 4.41594C40.8533 5.52528 40.7467 6.86928 40.448 8.44794C40.192 9.98394 39.7653 11.7973 39.168 13.8879C38.6133 15.9359 37.9307 18.3039 37.12 20.9919C36.48 23.1679 35.8187 25.5146 35.136 28.0319C34.4533 30.5066 33.8133 33.0666 33.216 35.7119C32.6613 38.3146 32.1707 40.9599 31.744 43.6479C31.36 46.2933 31.104 48.8959 30.976 51.4559C30.848 54.0159 30.8906 56.4693 31.104 58.8159C31.3173 61.2053 31.7867 63.4026 32.512 65.4079C32.6827 65.8773 32.64 66.3039 32.384 66.6879C32.128 67.0719 31.7653 67.3066 31.296 67.3919ZM75.6435 21.1199C76.5822 22.3146 77.0515 23.9359 77.0515 25.9839C77.0515 27.6053 76.6461 29.5253 75.8355 31.7439C75.0248 33.9199 73.9155 36.2026 72.5075 38.5919C71.0995 40.9813 69.4568 43.3493 67.5795 45.6959C65.7021 47.9999 63.6968 50.0906 61.5635 51.9679C59.4302 53.8026 57.2115 55.2746 54.9075 56.3839C52.6035 57.5359 50.3421 58.1119 48.1235 58.1119C45.6915 58.1119 43.5368 57.8346 41.6595 57.2799C39.8248 56.7253 38.2888 55.9573 37.0515 54.9759C35.8141 53.9946 34.8755 52.8426 34.2355 51.5199C33.5955 50.1546 33.2755 48.6826 33.2755 47.1039C33.2755 45.6106 33.5955 43.8826 34.2355 41.9199C34.8755 39.9146 35.7715 37.8239 36.9235 35.6479C38.0755 33.4719 39.4195 31.2959 40.9555 29.1199C42.5341 26.9439 44.2195 24.9173 46.0115 23.0399C47.8461 21.1199 49.7661 19.4346 51.7715 17.9839C53.8195 16.5333 55.8675 15.4666 57.9155 14.7839C58.1288 14.6986 58.3421 14.6346 58.5555 14.5919C58.8115 14.5493 59.0462 14.5279 59.2595 14.5279C60.0275 14.5279 60.7102 14.7626 61.3075 15.2319L62.3955 16.1279C62.7368 16.4266 62.8862 16.7893 62.8435 17.2159C62.8435 17.6426 62.6301 17.9626 62.2035 18.1759C60.1555 19.0719 58.1501 20.2453 56.1875 21.6959C54.2248 23.1039 52.3688 24.6613 50.6195 26.3679C48.9128 28.0746 47.3341 29.8879 45.8835 31.8079C44.4328 33.7279 43.1741 35.6266 42.1075 37.5039C41.0835 39.3813 40.2728 41.2159 39.6755 43.0079C39.0781 44.7999 38.7795 46.4213 38.7795 47.8719C38.7795 49.7066 39.1848 51.1573 39.9955 52.2239C40.8061 53.2906 42.4275 53.8239 44.8595 53.8239C46.8648 53.8239 48.9981 53.2906 51.2595 52.2239C53.5208 51.1573 55.7182 49.7279 57.8515 47.9359C59.9848 46.1013 61.9901 43.9679 63.8675 41.5359C65.7875 39.0613 67.3875 36.4586 68.6675 33.7279C69.5208 31.8933 70.0968 30.3146 70.3955 28.9919C70.6942 27.6693 70.8435 26.5813 70.8435 25.7279C70.8435 24.8319 70.7581 24.1493 70.5875 23.6799C70.4168 23.2106 70.2888 22.9333 70.2035 22.8479C70.2461 22.8479 70.0541 22.7839 69.6275 22.6559C69.2008 22.4853 68.9235 22.3999 68.7955 22.3999C67.6435 22.3999 66.3848 22.7199 65.0195 23.3599C63.6968 23.9573 62.3315 24.7893 60.9235 25.8559C59.5155 26.9226 58.0861 28.1599 56.6355 29.5679C55.1848 30.9333 53.7768 32.3839 52.4115 33.9199C51.0462 35.4559 49.7448 37.0133 48.5075 38.5919C47.2701 40.1706 46.1608 41.6853 45.1795 43.1359C44.8381 43.6053 44.3901 43.8399 43.8355 43.8399C43.4941 43.8399 43.1955 43.7759 42.9395 43.6479L41.3395 42.8159C40.9981 42.2613 40.9341 41.6853 41.1475 41.0879C41.3608 40.4479 41.6595 39.7866 42.0435 39.1039C42.8541 37.7813 43.8141 36.3306 44.9235 34.7519C46.0755 33.1733 47.3128 31.5733 48.6355 29.9519C50.0008 28.3306 51.4515 26.7733 52.9875 25.2799C54.5235 23.7866 56.1021 22.4639 57.7235 21.3119C59.3875 20.1173 61.0515 19.1786 62.7155 18.4959C64.3795 17.7706 66.0008 17.4079 67.5795 17.4079C68.2195 17.4079 68.9235 17.5146 69.6915 17.7279C70.5022 17.9413 71.2702 18.2399 71.9955 18.6239C72.7208 18.9653 73.4035 19.3493 74.0435 19.7759C74.7262 20.2026 75.2595 20.6506 75.6435 21.1199ZM98.149 20.1599C98.8743 20.2879 99.4503 20.6719 99.877 21.3119C100.304 21.9519 100.453 22.6346 100.325 23.3599C100.112 24.1706 99.5997 24.5759 98.789 24.5759C98.2343 24.5333 97.5303 24.5119 96.677 24.5119C95.8237 24.4693 94.8423 24.4693 93.733 24.5119C92.6663 24.5546 91.5143 24.6613 90.277 24.8319C89.0396 25.0026 87.7383 25.2586 86.373 25.5999C85.6903 27.2639 85.0076 28.9706 84.325 30.7199C83.685 32.4266 83.0876 34.1333 82.533 35.8399C82.021 37.5466 81.573 39.2319 81.189 40.8959C80.8476 42.5173 80.613 44.0746 80.485 45.5679C80.357 46.9333 80.357 48.1919 80.485 49.3439C80.613 50.4533 80.6983 51.3919 80.741 52.1599C80.8263 52.9279 80.805 53.4826 80.677 53.8239C80.5916 54.2079 80.2503 54.3359 79.653 54.2079C79.141 54.0799 78.6076 53.9733 78.053 53.8879C77.541 53.8026 77.0716 53.6746 76.645 53.5039C76.2183 53.3759 75.8556 53.1626 75.557 52.8639C75.2583 52.6079 75.0876 52.2453 75.045 51.7759C74.917 50.2399 74.981 47.9359 75.237 44.8639C75.4503 42.3466 76.0903 39.5733 77.157 36.5439C78.181 33.4719 79.333 30.4639 80.613 27.5199C79.1623 28.2026 77.669 29.0346 76.133 30.0159C75.877 30.1866 75.621 30.2293 75.365 30.1439C75.0663 30.0586 74.853 29.8666 74.725 29.5679L74.533 29.2479C73.9783 28.1386 73.9356 26.9866 74.405 25.7919C74.8743 24.5973 75.685 23.7653 76.837 23.2959C79.1836 22.2719 81.4663 21.5039 83.685 20.9919C84.325 19.6693 84.9223 18.4746 85.477 17.4079C86.0316 16.2986 86.501 15.3813 86.885 14.6559C87.3116 13.8879 87.9516 13.5039 88.805 13.5039C89.0183 13.5039 89.3383 13.5893 89.765 13.7599L90.277 14.2719C90.6183 14.6133 90.8103 14.9973 90.853 15.4239C90.8956 15.8506 90.8103 16.2559 90.597 16.6399C90.2983 17.1519 90.021 17.6853 89.765 18.2399C89.509 18.7946 89.2317 19.3706 88.933 19.9679C89.7436 19.8826 90.5116 19.8186 91.237 19.7759C91.9623 19.7333 92.6663 19.7119 93.349 19.7119C94.2876 19.7119 95.1623 19.7546 95.973 19.8399C96.7837 19.8826 97.509 19.9893 98.149 20.1599ZM150.791 21.4399C150.791 23.7439 150.194 26.4319 148.999 29.5039C147.804 32.5333 146.204 35.6479 144.199 38.8479C142.194 42.0479 139.868 45.1839 137.223 48.2559C134.62 51.3279 131.911 54.0586 129.095 56.4479C126.279 58.8799 123.463 60.8426 120.647 62.3359C117.831 63.8293 115.207 64.5759 112.775 64.5759C112.263 64.5759 111.58 64.5119 110.727 64.3839C109.874 64.2986 108.999 64.0853 108.103 63.7439C107.207 63.4026 106.354 62.9119 105.543 62.2719C104.69 61.6319 104.007 60.7786 103.495 59.7119C103.026 58.7306 102.812 57.8559 102.855 57.0879C102.855 56.3626 102.983 55.7226 103.239 55.1679C103.452 54.6559 103.73 54.2506 104.071 53.9519C104.412 53.6959 104.647 53.5679 104.775 53.5679C105.031 53.5679 105.33 53.7173 105.671 54.0159C106.012 54.3146 106.183 54.5919 106.183 54.8479C106.183 55.1039 106.14 55.4879 106.055 55.9999C105.97 56.5546 105.991 57.0879 106.119 57.5999C106.204 58.1546 106.482 58.6239 106.951 59.0079C107.378 59.3919 108.124 59.5839 109.191 59.5839C110.812 59.5839 112.583 59.1786 114.503 58.3679C116.423 57.5573 118.386 56.4266 120.391 54.9759C122.396 53.5679 124.402 51.9039 126.407 49.9839C128.455 48.0639 130.418 45.9946 132.295 43.7759C134.172 41.5146 135.9 39.1679 137.479 36.7359C139.1 34.3039 140.508 31.8933 141.703 29.5039C142.898 27.0719 143.836 24.7039 144.519 22.3999C145.202 20.0533 145.543 17.8773 145.543 15.8719C145.543 14.0373 145.308 12.5866 144.839 11.5199C144.412 10.4533 143.794 9.64261 142.983 9.08794C142.172 8.53328 141.234 8.19194 140.167 8.06394C139.1 7.89327 137.927 7.80794 136.647 7.80794C135.452 7.80794 134.087 7.97861 132.551 8.31994C131.058 8.66128 129.543 9.13061 128.007 9.72794C126.471 10.2826 124.978 10.9226 123.527 11.6479C122.076 12.3733 120.818 13.0986 119.751 13.8239C119.239 14.2079 118.898 14.6346 118.727 15.1039C118.599 15.5306 118.791 15.9573 119.303 16.3839C120.284 17.0666 121.159 17.7279 121.927 18.3679C122.695 19.0079 123.399 19.6693 124.039 20.3519C124.722 21.0346 125.383 21.7599 126.023 22.5279C126.706 23.2959 127.388 24.1493 128.071 25.0879C128.156 25.2159 128.178 25.3439 128.135 25.4719C128.135 25.5573 128.114 25.6426 128.071 25.7279C127.9 25.9839 127.666 26.1546 127.367 26.2399C127.068 26.3253 126.727 26.2186 126.343 25.9199C125.916 25.5786 125.383 25.1306 124.743 24.5759C124.103 24.0213 123.548 23.5519 123.079 23.1679C121.074 21.5039 119.41 20.2026 118.087 19.2639C116.807 18.2826 115.783 17.5146 115.015 16.9599C114.247 16.3626 113.692 15.8933 113.351 15.5519C113.052 15.1679 112.903 14.7199 112.903 14.2079C112.903 13.4399 113.308 12.6079 114.119 11.7119C114.93 10.8159 115.975 9.94128 117.255 9.08794C118.578 8.19194 120.071 7.33861 121.735 6.52794C123.399 5.71728 125.106 5.01328 126.855 4.41594C128.604 3.77594 130.311 3.28528 131.975 2.94394C133.639 2.55994 135.111 2.36794 136.391 2.36794C139.506 2.36794 142.002 2.90128 143.879 3.96794C145.756 4.99194 147.207 6.37861 148.231 8.12794C149.255 9.87728 149.938 11.9039 150.279 14.2079C150.62 16.5119 150.791 18.9226 150.791 21.4399ZM168.427 25.5359C169.11 25.8346 169.579 26.3039 169.835 26.9439C170.134 27.5839 170.155 28.2453 169.899 28.9279C169.174 30.9759 168.47 33.0026 167.787 35.0079C167.104 36.9706 166.55 38.8053 166.123 40.5119C165.739 42.1759 165.526 43.6479 165.483 44.9279C165.44 46.1653 165.675 47.0613 166.187 47.6159C166.315 47.7013 166.336 47.8933 166.251 48.1919C166.208 48.4906 166.166 48.7253 166.123 48.8959C166.038 49.1093 165.867 49.2799 165.611 49.4079C165.398 49.5359 165.184 49.5999 164.971 49.5999C164.374 49.5573 163.819 49.4933 163.307 49.4079C162.838 49.3226 162.411 49.0879 162.027 48.7039C161.686 48.2773 161.408 47.6373 161.195 46.7839C160.982 45.9306 160.832 44.7359 160.747 43.1999C160.107 43.8826 159.51 44.5439 158.955 45.1839C158.443 45.8239 157.931 46.3999 157.419 46.9119C156.907 47.3813 156.374 47.7653 155.819 48.0639C155.307 48.3199 154.752 48.4479 154.155 48.4479C153.771 48.4479 153.323 48.3839 152.811 48.2559C152.299 48.0853 151.787 47.8933 151.275 47.6799C150.806 47.4239 150.358 47.1466 149.931 46.8479C149.504 46.5066 149.184 46.1653 148.971 45.8239C148.374 44.9279 148.096 43.7973 148.139 42.4319C148.139 41.0666 148.331 39.5946 148.715 38.0159C149.099 36.4373 149.611 34.8373 150.251 33.2159C150.891 31.5519 151.531 29.9733 152.171 28.4799C152.342 28.0533 152.598 27.7333 152.939 27.5199C153.323 27.2639 153.728 27.1359 154.155 27.1359C154.496 27.1359 154.816 27.1999 155.115 27.3279C155.883 27.6693 156.438 28.2453 156.779 29.0559C157.12 29.8239 157.12 30.6133 156.779 31.4239C156.395 32.4053 156.032 33.4293 155.691 34.4959C155.35 35.5626 155.03 36.6079 154.731 37.6319C154.475 38.6133 154.24 39.5519 154.027 40.4479C153.856 41.3013 153.771 42.0479 153.771 42.6879C153.771 42.9013 153.856 43.0506 154.027 43.1359C154.24 43.1786 154.411 43.1359 154.539 43.0079C157.398 40.2773 161.216 34.7519 165.995 26.4319C166.422 25.6639 166.87 25.2799 167.339 25.2799C167.68 25.2799 168.043 25.3653 168.427 25.5359ZM215.22 25.8559C215.945 26.0266 216.521 26.4319 216.948 27.0719C217.375 27.6693 217.503 28.3519 217.332 29.1199C217.247 29.4613 217.055 29.7599 216.756 30.0159C216.5 30.2293 216.18 30.3146 215.796 30.2719C214.687 30.1866 213.023 30.1653 210.804 30.2079C208.585 30.2506 206.132 30.6133 203.444 31.2959C201.993 34.6239 200.713 38.0586 199.604 41.5999C198.495 45.0986 197.812 48.3199 197.556 51.2639C197.428 52.6293 197.407 53.8666 197.492 54.9759C197.62 56.1279 197.705 57.0879 197.748 57.8559C197.833 58.6239 197.812 59.1786 197.684 59.5199C197.599 59.9039 197.279 60.0319 196.724 59.9039C196.212 59.7759 195.679 59.6693 195.124 59.5839C194.612 59.4986 194.121 59.3706 193.652 59.1999C193.225 59.0719 192.863 58.8586 192.564 58.5599C192.308 58.3039 192.159 57.9413 192.116 57.4719C192.031 56.6613 191.988 55.7013 191.988 54.5919C192.031 53.4826 192.116 52.1386 192.244 50.5599C192.457 48.0426 193.076 45.2693 194.1 42.2399C195.167 39.2106 196.361 36.2239 197.684 33.2799C197.3 33.4506 196.66 33.7706 195.764 34.2399C194.868 34.6666 193.844 35.2853 192.692 36.0959C191.583 36.8639 190.409 37.8453 189.172 39.0399C187.935 40.2346 186.804 41.6426 185.78 43.2639C185.652 43.6053 185.46 43.8826 185.204 44.0959C184.991 44.3093 184.735 44.3733 184.436 44.2879C184.351 44.2453 184.244 44.1813 184.116 44.0959C184.031 43.9679 183.945 43.8613 183.86 43.7759C183.732 43.6479 183.604 43.5199 183.476 43.3919C182.623 42.5386 182.196 41.4933 182.196 40.2559C182.196 39.8293 182.345 39.0186 182.644 37.8239C182.943 36.6293 183.327 35.3066 183.796 33.8559C184.308 32.3626 184.863 30.8479 185.46 29.3119C186.1 27.7759 186.719 26.4746 187.316 25.4079C186.079 26.4746 184.841 27.9039 183.604 29.6959C182.367 31.4453 181.236 33.2373 180.212 35.0719C179.231 36.9066 178.42 38.6346 177.78 40.2559C177.14 41.8346 176.777 42.9866 176.692 43.7119C176.564 44.9919 176.713 46.0373 177.14 46.8479C177.609 47.6159 178.271 48.3626 179.124 49.0879C179.977 49.8133 180.98 50.6026 182.132 51.4559C183.327 52.3093 184.585 53.4613 185.908 54.9119C186.249 55.2533 186.527 55.6586 186.74 56.1279C186.953 56.5973 186.932 57.1946 186.676 57.9199C186.463 58.5173 186.1 58.9866 185.588 59.3279C185.119 59.6693 184.585 59.8399 183.988 59.8399C183.647 59.8399 183.348 59.7759 183.092 59.6479C182.239 59.3919 180.916 59.1359 179.124 58.8799C177.375 58.6666 175.476 58.5599 173.428 58.5599C172.063 58.5599 170.697 58.6239 169.332 58.7519C167.967 58.9226 166.708 59.1786 165.556 59.5199C165.001 59.6906 164.468 59.6693 163.956 59.4559C163.401 59.2426 162.996 58.8799 162.74 58.3679L162.676 58.2399C162.292 57.4719 162.271 56.6826 162.612 55.8719C162.911 55.0613 163.487 54.5279 164.34 54.2719C166.431 53.6319 168.841 53.3119 171.572 53.3119C172.809 53.3119 174.089 53.3759 175.412 53.5039C176.777 53.6319 178.164 53.8666 179.572 54.2079C179.145 53.6106 178.463 52.9706 177.524 52.2879C176.628 51.5626 175.711 50.7733 174.772 49.9199C173.833 49.0666 173.023 48.1279 172.34 47.1039C171.657 46.0373 171.316 44.8639 171.316 43.5839C171.316 41.9199 171.721 40.1066 172.532 38.1439C173.343 36.1813 174.367 34.2186 175.604 32.2559C176.841 30.2933 178.207 28.3946 179.7 26.5599C181.193 24.7253 182.601 23.0826 183.924 21.6319C185.289 20.1813 186.505 19.0079 187.572 18.1119C188.639 17.2159 189.343 16.7039 189.684 16.5759C190.324 16.4053 190.943 16.4479 191.54 16.7039C192.18 16.9173 192.671 17.3226 193.012 17.9199C193.311 18.4319 193.524 19.0293 193.652 19.7119C193.78 20.3946 193.844 21.0559 193.844 21.6959C193.887 22.3359 193.865 22.9119 193.78 23.4239C193.695 23.9359 193.588 24.2773 193.46 24.4479C192.905 25.0026 192.329 25.8986 191.732 27.1359C191.135 28.3306 190.537 29.6746 189.94 31.1679C190.708 30.6133 191.604 30.1013 192.628 29.6319C193.695 29.1199 194.74 28.6719 195.764 28.2879C196.831 27.8613 197.812 27.5199 198.708 27.2639C199.604 27.0079 200.287 26.8159 200.756 26.6879C201.396 25.3653 201.993 24.1706 202.548 23.1039C203.103 21.9946 203.572 21.0773 203.956 20.3519C204.127 20.0106 204.383 19.7546 204.724 19.5839C205.065 19.3706 205.407 19.2639 205.748 19.2639C206.132 19.2639 206.473 19.3493 206.772 19.5199L207.348 19.9679C207.689 20.3093 207.881 20.6933 207.924 21.1199C207.967 21.5466 207.881 21.9519 207.668 22.3359C207.369 22.8479 207.071 23.4026 206.772 23.9999C206.516 24.5546 206.239 25.1306 205.94 25.7279C206.751 25.6426 207.519 25.5786 208.244 25.5359C208.969 25.4506 209.673 25.4079 210.356 25.4079C211.337 25.4079 212.233 25.4506 213.044 25.5359C213.855 25.6213 214.58 25.7279 215.22 25.8559ZM39.779 114.936C38.6697 114.936 37.8163 114.488 37.219 113.592C36.9203 112.781 36.643 112.013 36.387 111.288C36.1736 110.648 35.939 109.987 35.683 109.304C35.4696 108.664 35.299 108.131 35.171 107.704C34.659 106.125 34.5096 104.717 34.723 103.48C34.9363 102.2 35.1496 101.325 35.363 100.856C36.899 97.3573 38.4563 93.9013 40.035 90.4879C41.6136 87.0319 43.1283 83.7253 44.579 80.5679C46.0297 77.3679 47.3737 74.3599 48.611 71.5439C49.8483 68.6853 50.915 66.1039 51.811 63.7999C52.707 61.4959 53.3683 59.4906 53.795 57.7839C54.2643 56.0346 54.4137 54.7119 54.243 53.8159C50.659 54.7119 47.3523 56.1839 44.323 58.2319C41.2936 60.2373 38.627 62.4133 36.323 64.7599C34.0616 67.1066 32.2056 69.3679 30.755 71.5439C29.3043 73.7199 28.3656 75.3839 27.939 76.5359C27.8963 76.6639 27.8536 76.8559 27.811 77.1119C27.7683 77.3253 27.7683 77.5599 27.811 77.8159C27.8536 78.0293 27.9603 78.2426 28.131 78.4559C28.3016 78.6693 28.579 78.8186 28.963 78.9039H30.243C30.4136 78.9039 30.6056 79.0106 30.819 79.2239C30.9043 79.3093 30.9896 79.4373 31.075 79.6079C31.1603 79.7786 31.203 79.9066 31.203 79.9919C31.331 80.2053 31.267 80.3546 31.011 80.4399C30.755 80.5253 30.4136 80.5893 29.987 80.6319C29.603 80.6746 29.1763 80.6959 28.707 80.6959C28.0243 80.6959 27.3416 80.5893 26.659 80.3759C25.9763 80.1626 25.379 79.7573 24.867 79.1599C24.3976 78.5626 24.0776 77.7733 23.907 76.7919C23.6936 75.7679 23.8856 74.4026 24.483 72.6959C24.8243 71.7146 25.5283 70.4773 26.595 68.9839C27.6616 67.4479 28.963 65.8266 30.499 64.1199C32.0776 62.4133 33.827 60.7066 35.747 58.9999C37.7096 57.2933 39.7363 55.7573 41.827 54.3919C43.9603 53.0266 46.115 51.9173 48.291 51.0639C50.467 50.2106 52.5577 49.7839 54.563 49.7839C55.4163 49.7839 56.2057 49.9973 56.931 50.4239C57.6563 50.8079 58.2537 51.3626 58.723 52.0879C59.2777 52.9839 59.4483 54.3493 59.235 56.1839C59.0643 57.9759 58.6163 60.1093 57.891 62.5839C57.1656 65.0159 56.227 67.7039 55.075 70.6479C53.923 73.5493 52.6856 76.5573 51.363 79.6719C50.0403 82.7439 48.675 85.8373 47.267 88.9519C45.859 92.0666 44.5363 95.0106 43.299 97.7839C42.403 99.8319 41.7416 101.432 41.315 102.584C40.8883 103.736 40.5897 104.611 40.419 105.208C40.2057 105.933 40.1203 106.403 40.163 106.616C41.187 104.611 42.6377 102.179 44.515 99.3199C46.3923 96.4613 48.5683 93.4319 51.043 90.2319C53.5177 86.9893 56.2483 83.7253 59.235 80.4399C62.2643 77.1119 65.4217 74.0186 68.707 71.1599C72.035 68.2586 75.4483 65.6773 78.947 63.4159C82.4883 61.1546 86.0083 59.4906 89.507 58.4239C89.9763 58.2533 90.4457 58.3173 90.915 58.6159C91.3843 58.8719 91.683 59.2559 91.811 59.7679L91.875 60.2159C92.0883 61.0266 91.7897 61.5813 90.979 61.8799C86.7977 63.5439 82.787 65.7413 78.947 68.4719C75.107 71.2026 71.5017 74.2106 68.131 77.4959C64.7603 80.7813 61.6457 84.1946 58.787 87.7359C55.971 91.2346 53.4537 94.6266 51.235 97.9119C49.0163 101.155 47.139 104.12 45.603 106.808C44.067 109.539 42.9363 111.715 42.211 113.336C41.9977 113.805 41.6777 114.168 41.251 114.424C40.8243 114.723 40.3336 114.893 39.779 114.936ZM114.373 86.0079C114.928 86.2639 115.269 86.6906 115.397 87.2879C115.568 87.8426 115.482 88.3759 115.141 88.8879C114.416 89.9119 113.541 91.0426 112.517 92.2799C111.493 93.5173 110.384 94.6906 109.189 95.7999C107.994 96.9093 106.778 97.8906 105.541 98.7439C104.304 99.5546 103.109 100.088 101.957 100.344C101.573 100.387 101.125 100.429 100.613 100.472C100.101 100.472 99.5677 100.429 99.013 100.344C98.501 100.259 98.0103 100.152 97.541 100.024C97.1143 99.8533 96.773 99.6399 96.517 99.3839C96.005 98.7866 95.5783 98.0826 95.237 97.2719C94.9383 96.4613 94.8316 95.3733 94.917 94.0079C93.7223 95.2026 92.5276 96.3759 91.333 97.5279C90.1383 98.6373 88.965 99.6399 87.813 100.536C86.7036 101.432 85.5943 102.157 84.485 102.712C83.4183 103.267 82.373 103.544 81.349 103.544C81.093 103.544 80.901 103.523 80.773 103.48C79.9196 103.395 79.109 103.288 78.341 103.16C77.5303 103.032 76.933 102.584 76.549 101.816C75.781 100.195 75.717 98.3599 76.357 96.3119C76.9543 94.2639 78.213 91.7253 80.133 88.6959C80.773 87.7146 81.669 86.4346 82.821 84.8559C84.0156 83.2346 85.317 81.6773 86.725 80.1839C88.133 78.6479 89.541 77.3253 90.949 76.2159C92.3996 75.1066 93.701 74.5519 94.853 74.5519C96.3463 74.5519 97.4983 74.8293 98.309 75.3839C99.1623 75.9386 99.7596 76.6639 100.101 77.5599C100.442 78.4559 100.613 79.4373 100.613 80.5039C100.656 81.5706 100.613 82.6159 100.485 83.6399C100.698 83.8106 100.954 84.0453 101.253 84.3439C101.552 84.6426 101.829 84.9626 102.085 85.3039C102.341 85.6453 102.533 86.0079 102.661 86.3919C102.832 86.7333 102.874 87.0319 102.789 87.2879C102.362 88.6959 101.936 90.2746 101.509 92.0239C101.082 93.7733 100.72 95.2453 100.421 96.4399C100.165 97.5066 100.272 98.0399 100.741 98.0399C100.954 98.0399 101.253 97.9119 101.637 97.6559C102.448 97.1013 103.237 96.5466 104.005 95.9919C104.816 95.4373 105.648 94.7546 106.501 93.9439C107.397 93.0906 108.357 92.0666 109.381 90.8719C110.448 89.6773 111.642 88.1839 112.965 86.3919C113.136 86.1786 113.349 86.0293 113.605 85.9439C113.904 85.8586 114.16 85.8799 114.373 86.0079ZM81.861 99.4479C82.5863 99.1066 83.525 98.4879 84.677 97.5919C85.829 96.6533 87.109 95.5226 88.517 94.1999C89.925 92.8346 91.4183 91.3199 92.997 89.6559C94.5756 87.9919 96.1543 86.2639 97.733 84.4719C97.5623 84.3439 97.3917 84.1946 97.221 84.0239C97.1356 83.8959 97.029 83.7679 96.901 83.6399C96.8156 83.4693 96.7517 83.3199 96.709 83.1919C96.6663 82.8506 96.6236 82.5519 96.581 82.2959C96.5383 82.0399 96.4956 81.8053 96.453 81.5919C96.4103 81.3359 96.3676 81.0799 96.325 80.8239C96.325 80.5679 96.3037 80.2479 96.261 79.8639C96.2183 79.6506 96.0903 79.5013 95.877 79.4159C95.7063 79.3306 95.5356 79.3733 95.365 79.5439C94.469 80.2693 93.4236 81.2933 92.229 82.6159C91.0343 83.9386 89.8183 85.4106 88.581 87.0319C87.3863 88.6106 86.2343 90.2533 85.125 91.9599C84.0583 93.6239 83.2263 95.2026 82.629 96.6959C82.117 98.0186 81.861 98.9359 81.861 99.4479ZM135.261 75.1279C136.584 75.1279 138.013 75.4266 139.549 76.0239C141.085 76.6213 142.514 77.4746 143.837 78.5839C145.16 79.6506 146.248 80.9519 147.101 82.4879C147.997 83.9813 148.445 85.6666 148.445 87.5439C148.445 88.8239 148.125 90.3173 147.485 92.0239C146.888 93.6879 145.885 95.2879 144.477 96.8239C143.069 98.3599 141.213 99.6613 138.909 100.728C136.605 101.752 133.768 102.264 130.397 102.264C129.288 102.264 128.264 102.157 127.325 101.944C126.429 101.731 125.554 101.453 124.701 101.112C123.848 100.728 122.973 100.301 122.077 99.8319C121.224 99.3199 120.285 98.7866 119.261 98.2319C119.176 98.1893 119.09 98.2106 119.005 98.2959C118.92 98.3386 118.877 98.4026 118.877 98.4879C118.792 99.5119 118.6 100.621 118.301 101.816C118.002 102.968 117.789 103.8 117.661 104.312C117.106 106.659 116.509 108.408 115.869 109.56C115.272 110.712 114.44 111.331 113.373 111.416C112.392 111.416 111.624 111.16 111.069 110.648C110.514 110.136 110.109 109.432 109.853 108.536C109.682 107.981 109.64 107.149 109.725 106.04C109.81 104.973 109.981 103.8 110.237 102.52C110.493 101.197 110.792 99.8533 111.133 98.4879C111.432 97.0799 111.73 95.8213 112.029 94.7119C112.328 93.5599 112.562 92.6213 112.733 91.8959C112.946 91.1706 113.053 90.7866 113.053 90.7439C112.882 90.5306 112.669 90.3813 112.413 90.2959C112.157 90.1679 111.944 90.0399 111.773 89.9119C111.56 89.7839 111.41 89.6346 111.325 89.4639C111.197 89.2506 111.176 88.9519 111.261 88.5679C111.474 87.5439 111.986 86.6479 112.797 85.8799C113.65 85.0693 114.632 84.1946 115.741 83.2559C115.784 83.0853 115.869 82.8293 115.997 82.4879C116.125 82.1466 116.253 81.7839 116.381 81.3999C116.509 81.0159 116.637 80.6533 116.765 80.3119C116.893 79.9706 116.978 79.7146 117.021 79.5439C117.277 78.7759 117.682 78.1146 118.237 77.5599C118.792 77.0053 119.517 76.6213 120.413 76.4079C120.712 76.3226 121.01 76.5146 121.309 76.9839C121.565 77.3679 121.736 77.7306 121.821 78.0719C121.906 78.3706 121.928 78.5626 121.885 78.6479C122.909 78.2213 123.912 77.7946 124.893 77.3679C125.874 76.9413 126.898 76.5786 127.965 76.2799C129.032 75.9386 130.162 75.6613 131.357 75.4479C132.552 75.2346 133.853 75.1279 135.261 75.1279ZM142.621 86.9679C142.706 85.7306 142.621 84.6426 142.365 83.7039C142.109 82.7653 141.725 81.9759 141.213 81.3359C140.744 80.6959 140.189 80.2266 139.549 79.9279C138.909 79.5866 138.269 79.4159 137.629 79.4159C136.178 79.4159 134.749 79.5013 133.341 79.6719C131.933 79.7999 130.482 80.0986 128.989 80.5679C127.538 81.0373 126.045 81.6986 124.509 82.5519C123.016 83.4053 121.437 84.5359 119.773 85.9439C119.346 87.2239 118.941 88.3333 118.557 89.2719C118.216 90.1679 118.045 91.2559 118.045 92.5359C118.045 92.9626 118.216 93.4746 118.557 94.0719C118.941 94.6266 119.517 95.1813 120.285 95.7359C121.053 96.2479 122.056 96.6959 123.293 97.0799C124.53 97.4213 126.045 97.5919 127.837 97.5919C129.416 97.5919 131.037 97.3786 132.701 96.9519C134.408 96.4826 135.965 95.7999 137.373 94.9039C138.781 94.0079 139.976 92.8986 140.957 91.5759C141.938 90.2533 142.493 88.7173 142.621 86.9679ZM175.834 86.0719C176.261 86.3279 176.517 86.6906 176.602 87.1599C176.73 87.6293 176.666 88.0559 176.41 88.4399C175.514 89.9333 174.426 91.5119 173.146 93.1759C171.866 94.7973 170.458 96.3119 168.922 97.7199C167.386 99.0853 165.743 100.237 163.994 101.176C162.287 102.072 160.559 102.52 158.81 102.52C158.127 102.52 157.53 102.435 157.018 102.264C156.634 102.179 156.101 102.051 155.418 101.88C154.735 101.667 154.031 101.325 153.306 100.856C152.623 100.344 152.026 99.6826 151.514 98.8719C151.002 98.0186 150.746 96.8879 150.746 95.4799C150.746 93.3039 151.151 91.2133 151.962 89.2079C152.73 87.2026 153.711 85.3679 154.906 83.7039C156.143 81.9973 157.487 80.5253 158.938 79.2879C160.389 78.0079 161.775 77.0053 163.098 76.2799C164.037 75.8106 164.933 75.5759 165.786 75.5759C166.511 75.5759 167.109 75.7253 167.578 76.0239C168.09 76.2799 168.474 76.5146 168.73 76.7279C169.071 77.0266 169.37 77.4106 169.626 77.8799C169.882 78.3493 170.095 78.8186 170.266 79.2879C170.437 79.7146 170.543 80.1413 170.586 80.5679C170.629 80.9946 170.607 81.3359 170.522 81.5919C169.925 83.8533 168.965 85.7946 167.642 87.4159C166.362 88.9946 164.975 90.2959 163.482 91.3199C162.031 92.3439 160.623 93.1119 159.258 93.6239C157.893 94.1359 156.89 94.4346 156.25 94.5199C156.037 94.5626 155.887 94.7973 155.802 95.2239C155.717 95.6079 155.781 96.1626 155.994 96.8879C156.207 97.5279 156.399 97.9759 156.57 98.2319C156.741 98.4879 156.933 98.6586 157.146 98.7439C157.914 98.9146 158.981 98.7653 160.346 98.2959C161.711 97.7839 163.162 97.0159 164.698 95.9919C166.277 94.9253 167.813 93.6026 169.306 92.0239C170.842 90.4453 172.143 88.6746 173.21 86.7119C173.551 86.0719 174.106 85.7519 174.874 85.7519C175.173 85.7519 175.493 85.8586 175.834 86.0719ZM165.978 79.4799C165.167 79.7359 164.314 80.2693 163.418 81.0799C162.565 81.8479 161.754 82.7013 160.986 83.6399C160.261 84.5786 159.621 85.5173 159.066 86.4559C158.511 87.3519 158.149 88.0559 157.978 88.5679C158.49 88.3973 159.173 87.9919 160.026 87.3519C160.879 86.7119 161.733 85.9653 162.586 85.1119C163.439 84.2159 164.186 83.2773 164.826 82.2959C165.509 81.2719 165.893 80.3333 165.978 79.4799ZM185.007 89.7839C184.111 88.8879 183.663 87.8426 183.663 86.6479C183.663 86.2213 183.813 85.4106 184.111 84.2159C184.41 83.0213 184.794 81.6986 185.263 80.2479C185.775 78.7546 186.33 77.2399 186.927 75.7039C187.567 74.1679 188.186 72.8666 188.783 71.7999C187.546 72.8666 186.309 74.2959 185.071 76.0879C183.834 77.8373 182.703 79.6293 181.679 81.4639C180.698 83.2986 179.887 85.0266 179.247 86.6479C178.607 88.2266 178.245 89.3786 178.159 90.1039C178.031 91.3839 178.202 92.4079 178.671 93.1759C179.141 93.9439 179.802 94.6906 180.655 95.4159C181.509 96.1413 182.511 96.9519 183.663 97.8479C184.815 98.7013 186.053 99.8319 187.375 101.24C187.717 101.624 187.994 102.051 188.207 102.52C188.463 102.989 188.442 103.587 188.143 104.312C187.93 104.909 187.567 105.379 187.055 105.72C186.586 106.061 186.053 106.232 185.455 106.232C185.114 106.232 184.815 106.168 184.559 106.04C183.706 105.784 182.383 105.528 180.591 105.272C178.842 105.059 176.943 104.952 174.895 104.952C173.53 104.952 172.165 105.016 170.799 105.144C169.434 105.315 168.175 105.571 167.023 105.912C166.469 106.083 165.935 106.061 165.423 105.848C164.869 105.635 164.463 105.272 164.207 104.76L164.143 104.632C163.759 103.864 163.738 103.075 164.079 102.264C164.378 101.453 164.954 100.92 165.807 100.664C167.898 100.024 170.309 99.7039 173.039 99.7039C174.277 99.7039 175.557 99.7679 176.879 99.8959C178.245 100.024 179.631 100.259 181.039 100.6C180.613 100.003 179.93 99.3626 178.991 98.6799C178.095 97.9546 177.178 97.1653 176.239 96.3119C175.343 95.4159 174.533 94.4559 173.807 93.4319C173.125 92.3653 172.783 91.1919 172.783 89.9119C172.783 88.2479 173.189 86.4559 173.999 84.5359C174.81 82.5733 175.834 80.6106 177.071 78.6479C178.309 76.6853 179.674 74.7866 181.167 72.9519C182.661 71.1173 184.069 69.4746 185.391 68.0239C186.757 66.5733 187.973 65.3999 189.039 64.5039C190.106 63.6079 190.81 63.0959 191.151 62.9679C191.791 62.7973 192.41 62.8399 193.007 63.0959C193.647 63.3093 194.138 63.7146 194.479 64.3119C194.778 64.8239 194.991 65.4213 195.119 66.1039C195.247 66.7866 195.311 67.4479 195.311 68.0879C195.354 68.7279 195.333 69.3039 195.247 69.8159C195.162 70.3279 195.055 70.6693 194.927 70.8399C194.501 71.3093 194.031 71.9919 193.519 72.8879C193.007 73.7839 192.495 74.8079 191.983 75.9599C191.471 77.1119 190.959 78.3279 190.447 79.6079C189.935 80.8879 189.466 82.1466 189.039 83.3839C188.655 84.6213 188.293 85.7733 187.951 86.8399C187.653 87.9066 187.439 88.7813 187.311 89.4639C187.226 89.8053 187.055 90.1253 186.799 90.4239C186.543 90.6799 186.245 90.7653 185.903 90.6799C185.818 90.6373 185.711 90.5733 185.583 90.4879C185.498 90.3599 185.413 90.2533 185.327 90.1679C185.242 90.0399 185.135 89.9119 185.007 89.7839Z" fill="#DBE3EF"></path>
+									</svg>
+								</div>
+								<div class="catalogmain-decor__01">
+									<picture>
+										<source media="(max-width: 991.98px)" srcset="./assets/img/placeholder.webp">
+										<source media="(max-width: 1279.98px)" srcset="./assets/img/catalog/01/01.png">
+										<source media="(max-width: 1439.98px)" srcset="./assets/img/catalog/01/01.png">
+										<source media="(max-width: 1599.98px)" srcset="./assets/img/catalog/01/01.png">
+										<source media="(max-width: 1840.98px)" srcset="./assets/img/catalog/01/01.png">
+										<img src="./assets/img/catalog/01/01.png" alt="Image" data-fls-mouse="" data-fls-mouse-cx="500" data-fls-mouse-cy="500">
+									</picture>
+								</div>
+								<div class="catalogmain-decor__02">
+									<div data-fls-parallax="" data-fls-parallax-coefficient="-25">
+										<picture>
+											<source media="(max-width: 991.98px)" srcset="./assets/img/placeholder.webp">
+											<source media="(max-width: 1279.98px)" srcset="./assets/img/catalog/02/01.png">
+											<source media="(max-width: 1439.98px)" srcset="./assets/img/catalog/02/01.png">
+											<source media="(max-width: 1599.98px)" srcset="./assets/img/catalog/02/01.png">
+											<source media="(max-width: 1840.98px)" srcset="./assets/img/catalog/02/01.png">
+											<img src="./assets/img/catalog/02/01.png" alt="Image" data-fls-mouse="" data-fls-mouse-cx="20" data-fls-mouse-cy="10">
+										</picture>
+									</div>
+								</div>
+								<div class="catalogmain-decor__03">
+									<div data-fls-parallax="" data-fls-parallax-coefficient="-25">
+										<picture>
+											<source media="(max-width: 991.98px)" srcset="./assets/img/placeholder.webp">
+											<source media="(max-width: 1279.98px)" srcset="./assets/img/catalog/03/01.png">
+											<source media="(max-width: 1439.98px)" srcset="./assets/img/catalog/03/01.png">
+											<source media="(max-width: 1599.98px)" srcset="./assets/img/catalog/03/01.png">
+											<source media="(max-width: 1840.98px)" srcset="./assets/img/catalog/03/01.png">
+											<img src="./assets/img/catalog/03/01.png" alt="Image" data-fls-mouse="" data-fls-mouse-cx="20" data-fls-mouse-cy="10">
+										</picture>
+									</div>
+								</div>
+								<div class="catalogmain-decor__04">
+									<div data-fls-parallax="" data-fls-parallax-coefficient="25">
+										<picture>
+											<source media="(max-width: 991.98px)" srcset="./assets/img/placeholder.webp">
+											<source media="(max-width: 1279.98px)" srcset="./assets/img/catalog/04/01.png">
+											<source media="(max-width: 1439.98px)" srcset="./assets/img/catalog/04/01.png">
+											<source media="(max-width: 1599.98px)" srcset="./assets/img/catalog/04/01.png">
+											<source media="(max-width: 1840.98px)" srcset="./assets/img/catalog/04/01.png">
+											<img src="./assets/img/catalog/04/01.png" alt="Image" data-fls-mouse="" data-fls-mouse-dyr="" data-fls-mouse-dxr="" data-fls-mouse-cx="20" data-fls-mouse-cy="10">
+										</picture>
+									</div>
+								</div>
+								<div class="catalogmain-decor__05">
+									<div data-fls-parallax="" data-fls-parallax-coefficient="25">
+										<picture>
+											<source media="(max-width: 991.98px)" srcset="./assets/img/placeholder.webp">
+											<source media="(max-width: 1279.98px)" srcset="./assets/img/catalog/05/01.png">
+											<source media="(max-width: 1439.98px)" srcset="./assets/img/catalog/05/01.png">
+											<source media="(max-width: 1599.98px)" srcset="./assets/img/catalog/05/01.png">
+											<source media="(max-width: 1840.98px)" srcset="./assets/img/catalog/05/01.png">
+											<img src="./assets/img/catalog/05/01.png" alt="Image" data-fls-mouse="" data-fls-mouse-dyr="" data-fls-mouse-dxr="" data-fls-mouse-cx="20" data-fls-mouse-cy="10">
+										</picture>
+									</div>
+								</div>
+								<div class="catalogmain-decor__06">
+									<div data-fls-parallax="" data-fls-parallax-coefficient="25">
+										<picture>
+											<source media="(max-width: 991.98px)" srcset="./assets/img/placeholder.webp">
+											<source media="(max-width: 1279.98px)" srcset="./assets/img/catalog/06/01.png">
+											<source media="(max-width: 1439.98px)" srcset="./assets/img/catalog/06/01.png">
+											<source media="(max-width: 1599.98px)" srcset="./assets/img/catalog/06/01.png">
+											<source media="(max-width: 1840.98px)" srcset="./assets/img/catalog/06/01.png">
+											<img src="./assets/img/catalog/06/01.png" alt="Image" data-fls-mouse="" data-fls-mouse-dyr="" data-fls-mouse-dxr="" data-fls-mouse-cx="20" data-fls-mouse-cy="10">
+										</picture>
+									</div>
+								</div>
+								<div class="catalogmain-decor__07">
+									<div data-fls-parallax="" data-fls-parallax-coefficient="-25">
+										<picture>
+											<source media="(max-width: 991.98px)" srcset="./assets/img/placeholder.webp">
+											<source media="(max-width: 1279.98px)" srcset="./assets/img/catalog/07/01.png">
+											<source media="(max-width: 1439.98px)" srcset="./assets/img/catalog/07/01.png">
+											<source media="(max-width: 1599.98px)" srcset="./assets/img/catalog/07/01.png">
+											<source media="(max-width: 1840.98px)" srcset="./assets/img/catalog/07/01.png">
+											<img src="./assets/img/catalog/07/01.png" alt="Image" data-fls-mouse="" data-fls-mouse-cx="20" data-fls-mouse-cy="10">
+										</picture>
+									</div>
+								</div>
+								<div class="catalogmain-decor__08">
+									<div data-fls-parallax="" data-fls-parallax-coefficient="-25">
+										<picture>
+											<source media="(max-width: 991.98px)" srcset="./assets/img/placeholder.webp">
+											<source media="(max-width: 1279.98px)" srcset="./assets/img/catalog/08/01.png">
+											<source media="(max-width: 1439.98px)" srcset="./assets/img/catalog/08/01.png">
+											<source media="(max-width: 1599.98px)" srcset="./assets/img/catalog/08/01.png">
+											<source media="(max-width: 1840.98px)" srcset="./assets/img/catalog/08/01.png">
+											<img src="./assets/img/catalog/08/01.png" alt="Image" data-fls-mouse="" data-fls-mouse-cx="20" data-fls-mouse-cy="10">
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="catalogmain__body">
+							<div class="masonry">
+								<button type="button" data-fls-menuinner="" class="_mobile-menu-inner-btn--open --icon-06">All Devices</button>
+								<ul class="masonry__filter filter-masonry" data-fls-dynamic=".mobile-menu-inner__body, 767.98,0">
+									<li class="filter-masonry__item">
+										<button type="button" data-fls-masonry-filter-link="*" class="filter-masonry__link --active">All
+							Devices</button>
+									</li>
+									<li class="filter-masonry__item">
+										<button type="button" data-fls-masonry-filter-link="pod" class="filter-masonry__link">POD
+							System</button>
+									</li>
+									<li class="filter-masonry__item">
+										<button type="button" data-fls-masonry-filter-link="dr" class="filter-masonry__link">Disposable /
+							Rechargeable</button>
+									</li>
+									<li class="filter-masonry__item">
+										<button type="button" data-fls-masonry-filter-link="dn" class="filter-masonry__link">Disposable / Non
+							rechargeable</button>
+									</li>
+								</ul>
+								<div data-fls-masonry="" class="masonry__items" data-fls-mainproducts="">
+									<div data-fls-masonry-item="" data-fls-masonry-filter="pod" class="masonry__item">
+										<article class="products__item item-products">
+											<div class="item-products__header header-item-products">
+												<div class="header-item-products__element">
+													<span>5</span>
+													<span>ml</span>
+												</div>
+												<div class="header-item-products__element">
+													<span>40k</span>
+													<span>puffs</span>
+												</div>
+												<span class="item-products__label">DISPOSABLE / Rechargeable</span>
+											</div>
+											<picture>
+												<source media="(max-width: 767.98px)" srcset="./assets/img/products/main_carts/turbo-x_slim/576.jpg" type="image/jpg">
+												<source media="(max-width: 991.98px)" srcset="./assets/img/products/main_carts/turbo-x_slim/768.jpg" type="image/jpg">
+												<source media="(max-width: 1279.98px)" srcset="./assets/img/products/main_carts/turbo-x_slim/05.jpg" type="image/jpg">
+												<source media="(max-width: 1439.98px)" srcset="./assets/img/products/main_carts/turbo-x_slim/04.jpg" type="image/jpg">
+												<source media="(max-width: 1599.98px)" srcset="./assets/img/products/main_carts/turbo-x_slim/03.jpg" type="image/jpg">
+												<source media="(max-width: 1840.98px)" srcset="./assets/img/products/main_carts/turbo-x_slim/02.jpg" type="image/jpg">
+												<img class="item-products__photo lazy" data-src="assets/img/products/main_carts/turbo-x_slim/01.jpg" alt="Image">
+											</picture>
+											<div class="item-products__body">
+												<span class="item-products__uptitle">Disposable/rechargeable</span>
+												<h3 class="item-products__title">Turbo-X Slim</h3>
+												<ul>
+													<li>15ml</li>
+													<li>650mah</li>
+													<li>12 000 puffs</li>
+												</ul>
+												<a class="_btn-04 _medium" href="mixpro.html">
+													<div>More about Turbo-X Slim</div>
+													<div>Learn more</div>
+												</a>
+											</div>
+											<ul class="item-products__list">
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/01.svg" alt="Image">
+													<p>
+														Full color
+														<br>
+														display
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/02.svg" alt="Image">
+													<p>
+														2x | Dual
+														<br>
+														mesh coil
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/03.svg" alt="Image">
+													<p>
+														Adjustable
+														<br>
+														Modes (2)
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/04.svg" alt="Image">
+													<p>
+														Child-lock
+														<br>
+														mode
+													</p>
+												</li>
+											</ul>
+										</article>
+									</div>
+									<div data-fls-masonry-item="" data-fls-masonry-filter="dr" class="masonry__item">
+										<article class="products__item item-products">
+											<div class="item-products__header header-item-products">
+												<div class="header-item-products__element">
+													<span>5</span>
+													<span>ml</span>
+												</div>
+												<div class="header-item-products__element">
+													<span>40k</span>
+													<span>puffs</span>
+												</div>
+												<span class="item-products__label">DISPOSABLE / Rechargeable</span>
+											</div>
+											<!-- <img class="item-products__photo" src="@img/products/main_carts/lume/01.png" alt="Image" /> -->
+											<picture>
+												<source media="(max-width: 767.98px)" srcset="./assets/img/products/main_carts/lume/576.jpg" type="image/webp">
+												<source media="(max-width: 991.98px)" srcset="./assets/img/products/main_carts/lume/768.jpg" type="image/webp">
+												<source media="(max-width: 1279.98px)" srcset="./assets/img/products/main_carts/lume/05.jpg" type="image/jpg">
+												<source media="(max-width: 1439.98px)" srcset="./assets/img/products/main_carts/lume/04.jpg" type="image/jpg">
+												<source media="(max-width: 1599.98px)" srcset="./assets/img/products/main_carts/lume/03.jpg" type="image/jpg">
+												<source media="(max-width: 1840.98px)" srcset="./assets/img/products/main_carts/lume/02.jpg" type="image/jpg">
+												<img class="item-products__photo lazy" data-src="assets/img/products/main_carts/lume/01.jpg" alt="Image">
+											</picture>
+											<div class="item-products__body">
+												<span class="item-products__uptitle">Disposable/rechargeable</span>
+												<h3 class="item-products__title">Turbo-X Slim</h3>
+												<ul>
+													<li>15ml</li>
+													<li>650mah</li>
+													<li>12 000 puffs</li>
+												</ul>
+												<a class="_btn-04 _medium" href="slim.html">
+													<div>More about Turbo-X Slim</div>
+													<div>Learn more</div>
+												</a>
+											</div>
+											<ul class="item-products__list">
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/01.svg" alt="Image">
+													<p>
+														Full color
+														<br>
+														display
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/02.svg" alt="Image">
+													<p>
+														2x | Dual
+														<br>
+														mesh coil
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/03.svg" alt="Image">
+													<p>
+														Adjustable
+														<br>
+														Modes (2)
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/04.svg" alt="Image">
+													<p>
+														Child-lock
+														<br>
+														mode
+													</p>
+												</li>
+											</ul>
+										</article>
+									</div>
+									<div data-fls-masonry-item="" data-fls-masonry-filter="dn" class="masonry__item">
+										<article class="products__item item-products">
+											<div class="item-products__header header-item-products">
+												<div class="header-item-products__element">
+													<span>5</span>
+													<span>ml</span>
+												</div>
+												<div class="header-item-products__element">
+													<span>40k</span>
+													<span>puffs</span>
+												</div>
+												<span class="item-products__label">DISPOSABLE / Rechargeable</span>
+											</div>
+											<!-- <img class="item-products__photo" src="@img/products/main_carts/lunux/01.png" alt="Image" /> -->
+											<picture>
+												<source media="(max-width: 767.98px)" srcset="./assets/img/products/main_carts/lunux/576.jpg" type="image/webp">
+												<source media="(max-width: 991.98px)" srcset="./assets/img/products/main_carts/lunux/768.jpg" type="image/webp">
+												<source media="(max-width: 1279.98px)" srcset="./assets/img/products/main_carts/lunux/05.jpg" type="image/jpg">
+												<source media="(max-width: 1439.98px)" srcset="./assets/img/products/main_carts/lunux/04.jpg" type="image/jpg">
+												<source media="(max-width: 1599.98px)" srcset="./assets/img/products/main_carts/lunux/03.jpg" type="image/jpg">
+												<source media="(max-width: 1840.98px)" srcset="./assets/img/products/main_carts/lunux/02.jpg" type="image/jpg">
+												<img class="item-products__photo lazy" data-src="assets/img/products/main_carts/lunux/01.jpg" alt="Image">
+											</picture>
+											<div class="item-products__body">
+												<span class="item-products__uptitle">Disposable/rechargeable</span>
+												<h3 class="item-products__title">Turbo-X Slim</h3>
+												<ul>
+													<li>15ml</li>
+													<li>650mah</li>
+													<li>12 000 puffs</li>
+												</ul>
+												<a class="_btn-04 _medium" href="mixpro.html">
+													<div>More about Turbo-X Slim</div>
+													<div>Learn more</div>
+												</a>
+											</div>
+											<ul class="item-products__list">
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/01.svg" alt="Image">
+													<p>
+														Full color
+														<br>
+														display
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/02.svg" alt="Image">
+													<p>
+														2x | Dual
+														<br>
+														mesh coil
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/03.svg" alt="Image">
+													<p>
+														Adjustable
+														<br>
+														Modes (2)
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/04.svg" alt="Image">
+													<p>
+														Child-lock
+														<br>
+														mode
+													</p>
+												</li>
+											</ul>
+										</article>
+									</div>
+									<div data-fls-masonry-item="" data-fls-masonry-filter="pod" class="masonry__item">
+										<article class="products__item item-products">
+											<div class="item-products__header header-item-products">
+												<div class="header-item-products__element">
+													<span>5</span>
+													<span>ml</span>
+												</div>
+												<div class="header-item-products__element">
+													<span>40k</span>
+													<span>puffs</span>
+												</div>
+												<span class="item-products__label">DISPOSABLE / Rechargeable</span>
+											</div>
+											<!-- <img class="item-products__photo" src="@img/products/main_carts/mixpro/01.png" alt="Image" /> -->
+											<picture>
+												<source media="(max-width: 767.98px)" srcset="./assets/img/products/main_carts/mixpro/576.jpg" type="image/webp">
+												<source media="(max-width: 991.98px)" srcset="./assets/img/products/main_carts/mixpro/768.jpg" type="image/webp">
+												<source media="(max-width: 1279.98px)" srcset="./assets/img/products/main_carts/mixpro/05.jpg" type="image/jpg">
+												<source media="(max-width: 1439.98px)" srcset="./assets/img/products/main_carts/mixpro/04.jpg" type="image/jpg">
+												<source media="(max-width: 1599.98px)" srcset="./assets/img/products/main_carts/mixpro/03.jpg" type="image/jpg">
+												<source media="(max-width: 1840.98px)" srcset="./assets/img/products/main_carts/mixpro/02.jpg" type="image/jpg">
+												<img class="item-products__photo lazy" data-src="assets/img/products/main_carts/mixpro/01.jpg" alt="Image">
+											</picture>
+											<div class="item-products__body">
+												<span class="item-products__uptitle">Disposable/rechargeable</span>
+												<h3 class="item-products__title">Turbo-X Slim</h3>
+												<ul>
+													<li>15ml</li>
+													<li>650mah</li>
+													<li>12 000 puffs</li>
+												</ul>
+												<a class="_btn-04 _medium" href="slim.html">
+													<div>More about Turbo-X Slim</div>
+													<div>Learn more</div>
+												</a>
+											</div>
+											<ul class="item-products__list">
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/01.svg" alt="Image">
+													<p>
+														Full color
+														<br>
+														display
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/02.svg" alt="Image">
+													<p>
+														2x | Dual
+														<br>
+														mesh coil
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/03.svg" alt="Image">
+													<p>
+														Adjustable
+														<br>
+														Modes (2)
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/04.svg" alt="Image">
+													<p>
+														Child-lock
+														<br>
+														mode
+													</p>
+												</li>
+											</ul>
+										</article>
+									</div>
+									<div data-fls-masonry-item="" data-fls-masonry-filter="dr" class="masonry__item">
+										<article class="products__item item-products">
+											<div class="item-products__header header-item-products">
+												<div class="header-item-products__element">
+													<span>5</span>
+													<span>ml</span>
+												</div>
+												<div class="header-item-products__element">
+													<span>40k</span>
+													<span>puffs</span>
+												</div>
+												<span class="item-products__label">DISPOSABLE / Rechargeable</span>
+											</div>
+											<!-- <img class="item-products__photo" src="@img/products/main_carts/nyx/01.png" alt="Image" /> -->
+											<picture>
+												<source media="(max-width: 767.98px)" srcset="./assets/img/products/main_carts/nyx/576.jpg" type="image/webp">
+												<source media="(max-width: 991.98px)" srcset="./assets/img/products/main_carts/nyx/768.jpg" type="image/webp">
+												<source media="(max-width: 1279.98px)" srcset="./assets/img/products/main_carts/nyx/05.jpg" type="image/jpg">
+												<source media="(max-width: 1439.98px)" srcset="./assets/img/products/main_carts/nyx/04.jpg" type="image/jpg">
+												<source media="(max-width: 1599.98px)" srcset="./assets/img/products/main_carts/nyx/03.jpg" type="image/jpg">
+												<source media="(max-width: 1840.98px)" srcset="./assets/img/products/main_carts/nyx/02.jpg" type="image/jpg">
+												<img class="item-products__photo lazy" data-src="assets/img/products/main_carts/nyx/01.jpg" alt="Image">
+											</picture>
+											<div class="item-products__body">
+												<span class="item-products__uptitle">Disposable/rechargeable</span>
+												<h3 class="item-products__title">Turbo-X Slim</h3>
+												<ul>
+													<li>15ml</li>
+													<li>650mah</li>
+													<li>12 000 puffs</li>
+												</ul>
+												<a class="_btn-04 _medium" href="mixpro.html">
+													<div>More about Turbo-X Slim</div>
+													<div>Learn more</div>
+												</a>
+											</div>
+											<ul class="item-products__list">
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/01.svg" alt="Image">
+													<p>
+														Full color
+														<br>
+														display
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/02.svg" alt="Image">
+													<p>
+														2x | Dual
+														<br>
+														mesh coil
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/03.svg" alt="Image">
+													<p>
+														Adjustable
+														<br>
+														Modes (2)
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/04.svg" alt="Image">
+													<p>
+														Child-lock
+														<br>
+														mode
+													</p>
+												</li>
+											</ul>
+										</article>
+									</div>
+									<div data-fls-masonry-item="" data-fls-masonry-filter="dn" class="masonry__item">
+										<article class="products__item item-products">
+											<div class="item-products__header header-item-products">
+												<div class="header-item-products__element">
+													<span>5</span>
+													<span>ml</span>
+												</div>
+												<div class="header-item-products__element">
+													<span>40k</span>
+													<span>puffs</span>
+												</div>
+												<span class="item-products__label">DISPOSABLE / Rechargeable</span>
+											</div>
+											<!-- <img class="item-products__photo" src="@img/products/main_carts/craze_slim/01.png" alt="Image" /> -->
+											<picture>
+												<source media="(max-width: 767.98px)" srcset="./assets/img/products/main_carts/craze_slim/576.jpg" type="image/webp">
+												<source media="(max-width: 991.98px)" srcset="./assets/img/products/main_carts/craze_slim/768.jpg" type="image/webp">
+												<source media="(max-width: 1279.98px)" srcset="./assets/img/products/main_carts/craze_slim/05.jpg" type="image/jpg">
+												<source media="(max-width: 1439.98px)" srcset="./assets/img/products/main_carts/craze_slim/04.jpg" type="image/jpg">
+												<source media="(max-width: 1599.98px)" srcset="./assets/img/products/main_carts/craze_slim/03.jpg" type="image/jpg">
+												<source media="(max-width: 1840.98px)" srcset="./assets/img/products/main_carts/craze_slim/02.jpg" type="image/jpg">
+												<img class="item-products__photo lazy" data-src="assets/img/products/main_carts/craze_slim/01.jpg" alt="Image">
+											</picture>
+											<div class="item-products__body">
+												<span class="item-products__uptitle">Disposable/rechargeable</span>
+												<h3 class="item-products__title">Turbo-X Slim</h3>
+												<ul>
+													<li>15ml</li>
+													<li>650mah</li>
+													<li>12 000 puffs</li>
+												</ul>
+												<a class="_btn-04 _medium" href="slim.html">
+													<div>More about Turbo-X Slim</div>
+													<div>Learn more</div>
+												</a>
+											</div>
+											<ul class="item-products__list">
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/01.svg" alt="Image">
+													<p>
+														Full color
+														<br>
+														display
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/02.svg" alt="Image">
+													<p>
+														2x | Dual
+														<br>
+														mesh coil
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/03.svg" alt="Image">
+													<p>
+														Adjustable
+														<br>
+														Modes (2)
+													</p>
+												</li>
+												<li>
+													<img src="./assets/img/products/main_carts/turbo-x_slim/icons/04.svg" alt="Image">
+													<p>
+														Child-lock
+														<br>
+														mode
+													</p>
+												</li>
+											</ul>
+										</article>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-fls-mainwholesale="" class="main-wholesale _section-padding">
+					<div class="main-wholesale__wrapper" data-fls-parallax-parent="" data-fls-parallax-smooth="30">
+						<div class="ts__container">
+							<div class="top-section--04" data-fls-watcher="" data-fls-watcher-threshold="0.1" data-fls-watcher-once=""></div>
+						</div>
+						<div class="main-wholesale__decor-01">
+							<picture>
+								<source media="(max-width: 575.98px)" srcset="./assets/img/main/wholesale/02.png">
+								<source media="(max-width: 767.98px)" srcset="./assets/img/main/wholesale/02.png">
+								<source media="(max-width: 991.98px)" srcset="./assets/img/main/wholesale/02.png">
+								<source media="(max-width: 1279.98px)" srcset="./assets/img/main/wholesale/02.png">
+								<source media="(max-width: 1439.98px)" srcset="./assets/img/main/wholesale/02.png">
+								<source media="(max-width: 1599.98px)" srcset="./assets/img/main/wholesale/02.png">
+								<source media="(max-width: 1840.98px)" srcset="./assets/img/main/wholesale/02.png">
+								<img src="./assets/img/main/wholesale/02.png" alt="Image" data-fls-parallax="" data-fls-parallax-coefficient="15">
+							</picture>
+						</div>
+						<div class="main-wholesale__decor-02">
+							<picture>
+								<source media="(max-width: 575.98px)" srcset="./assets/img/main/wholesale/03.png">
+								<source media="(max-width: 767.98px)" srcset="./assets/img/main/wholesale/03.png">
+								<source media="(max-width: 991.98px)" srcset="./assets/img/main/wholesale/03.png">
+								<source media="(max-width: 1279.98px)" srcset="./assets/img/main/wholesale/03.png">
+								<source media="(max-width: 1439.98px)" srcset="./assets/img/main/wholesale/03.png">
+								<source media="(max-width: 1599.98px)" srcset="./assets/img/main/wholesale/03.png">
+								<source media="(max-width: 1840.98px)" srcset="./assets/img/main/wholesale/03.png">
+								<img src="./assets/img/main/wholesale/03.png" alt="Image" data-fls-parallax="" data-fls-parallax-coefficient="-15">
+							</picture>
+						</div>
+						<div class="main-wholesale__body" data-fls-watcher="" data-fls-watcher-threshold="0.1" data-fls-watcher-once="">
+							<!--
+<img class="main-wholesale__image" src="@img/main/wholesale/01.jpg" alt="Image"
+data-fls-dynamic=".main-wholesale__container, 991.98, 1">
+-->
+							<div class="main-wholesale__container">
+								<picture data-fls-dynamic=".main-wholesale, 991.98, 1">
+									<source media="(max-width: 575.98px)" srcset="./assets/img/main/wholesale/04m.jpg">
+									<source media="(max-width: 767.98px)" srcset="./assets/img/main/wholesale/03.jpg">
+									<source media="(max-width: 991.98px)" srcset="./assets/img/main/wholesale/02.jpg">
+									<source media="(max-width: 1279.98px)" srcset="./assets/img/main/wholesale/02m.jpg">
+									<source media="(max-width: 1439.98px)" srcset="./assets/img/main/wholesale/01m.jpg">
+									<source media="(max-width: 1599.98px)" srcset="./assets/img/main/wholesale/01m.jpg">
+									<source media="(max-width: 1840.98px)" srcset="./assets/img/main/wholesale/01m.jpg">
+									<img class="main-wholesale__image lazy" data-src="assets/img/main/wholesale/01m.jpg" alt="Image">
+								</picture>
+								<h2 class="main-wholesale__title _title _tcenter" data-fls-dynamic=".top-section--04, 991.98, 1">RifBar Wholesale</h2>
+								<ul class="main-wholesale__list" data-fls-dynamic=".top-section--04, 991.98, 3">
+									<li>
+										Experience Rifbar’s
+										<span>own unique vapes</span>
+									</li>
+									<li>
+										Global reach,
+										<span>seamless delivery</span>
+									</li>
+									<li>
+										We’re ready
+										<span>for big orders</span>
+									</li>
+								</ul>
+								<div class="main-wholesale__content">
+									<div class="main-wholesale__info info">
+										<p class="info__title" data-fls-dynamic=".top-section--04, 991.98, 0">04/ Become a seller</p>
+										<div class="info__box">
+											<p class="info__text _text" data-fls-dynamic=".top-section--04, 991.98, 2">
+												As a RifBar distributor,
+								you’re not just selling products; you’re sharing
+								a
+								lifestyle, a commitment to quality, and a passion for excellence. We offer you a chance to be at
+								the forefront of a thriving industry, delivering premium products to customers who trust and
+								rely on us.
+											</p>
+										</div>
+									</div>
+									<div class="main-wholesale__actions">
+										<a class="btn-01 _medium" href="become.html">Become a Seller</a>
+										<a class="_btn-04 --icon-08" href="about.html">
+											<span>More About Wholesale</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="default-nav mobile-menu-inner cclose">
+					<div class="mobile-menu-inner__wrapper">
+						<div class="mobile-menu-inner__head head-mobile-menu-inner">
+							<button type="button" class="button --icon-09 _btn-close mobile-menu-inner__btn--close"></button>
+						</div>
+						<div class="mobile-menu-inner__body"></div>
+					</div>
+				</div>
+				<div data-fls-cookiewindow="" class="cookiewindow">
+					<div class="cookiewindow__body">
+						<p>
+							We use analytics cookies to improve your experience.
+							<a href="/document">Learn more</a>
+						</p>
+						<button type="button" class="_btn-06">Accept</button>
+					</div>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer" data-fls-watcher="" data-fls-watcher-threshold="0.1" data-fls-watcher-once="">
+				<div class="footer__social social-footer">
+					<div class="social-footer__container">
+						<div class="social-footer__titile">Follow Us</div>
+						<ul>
+							<li>
+								<a class="--icon-01" href="#"></a>
+							</li>
+							<li>
+								<a class="--icon-02" href="#"></a>
+							</li>
+							<li>
+								<a class="--icon-03" href="#"></a>
+							</li>
+							<li>
+								<a class="--icon-04" href="#"></a>
+							</li>
+							<li>
+								<a class="--icon-05" href="#"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer__main main-footer">
+					<div class="main-footer__container">
+						<nav class="main-footer__nav">
+							<div class="main-footer__column">
+								<p class="main-footer__title">Products</p>
+								<ul>
+									<li>
+										<a href="mixpro.html">MixPro</a>
+									</li>
+									<li>
+										<a href="slim.html">Lunux</a>
+									</li>
+									<li>
+										<a href="#">Lume</a>
+									</li>
+									<li>
+										<a href="#">NYX</a>
+									</li>
+									<li>
+										<a href="#">Craze Slim</a>
+									</li>
+									<li>
+										<a href="#">Turbo-X Slim</a>
+									</li>
+								</ul>
+							</div>
+							<div class="main-footer__column">
+								<p class="main-footer__title">Company</p>
+								<ul>
+									<li>
+										<a href="about.html">About RifBar</a>
+									</li>
+									<li>
+										<a href="contacts.html">Contact Us</a>
+									</li>
+									<li>
+										<a href="news.html">Blog</a>
+									</li>
+									<li>
+										<a href="events.html">Events</a>
+									</li>
+									<li>
+										<a href="faq.html">FAQ</a>
+									</li>
+									<li>
+										<a href="accessories.html">RifBar Accessories</a>
+									</li>
+								</ul>
+							</div>
+							<div class="main-footer__column">
+								<p class="main-footer__title">Wholesale</p>
+								<ul>
+									<li>
+										<a href="#">Vape wholesale</a>
+									</li>
+									<li>
+										<a href="become.html">Become a Seller</a>
+									</li>
+								</ul>
+							</div>
+							<div class="main-footer__column">
+								<p class="main-footer__title">Contacts</p>
+								<ul>
+									<li>
+										<a href="mailto:support@rifbar.com">support@rifbar.com</a>
+									</li>
+									<li>
+										<a href="mailto:sales@rifbar.com">sales@rifbar.com</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<div class="main-footer__subscribe subscribe-footer">
+							<div class="subscribe-footer__title">Subscribe</div>
+							<div class="subscribe-footer__info">Subscribe to be the first to know about news, promotions and discounts</div>
+							<form class="subscribe-footer__form" data-fls-form="ajax" data-fls-form-popup="subback" method="POST" action="#" autocomplete="off">
+								<input data-fls-input="" autocomplete="off" type="email" name="form[]" placeholder="Your Email" class="input" required data-fls-form-errtext="This field is required.">
+								<button type="submit" class="button btn-01 _light">Send</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom bottom-footer">
+					<div class="bottom-footer__container">
+						<div class="bottom-footer__box">
+							<p class="bottom-footer__info">
+								Rifbar is committed to preventing sales to minors, which includes an
+								<span data-fls-age-limit="">18</span>
+								+ age
+					verification process at checkout and adult (
+								<span data-fls-age-limit="">18</span>
+								+) signature verification
+					at the time of delivery for
+					RifBar sales. The RifBar name, logo and tags are registered trademarks.
+							</p>
+							<ul>
+								<li>
+									<img src="./assets/img/footer/payments/01.svg" alt="Image">
+								</li>
+								<li>
+									<img src="./assets/img/footer/payments/02.svg" alt="Image">
+								</li>
+								<li>
+									<img src="./assets/img/footer/payments/03.svg" alt="Image">
+								</li>
+								<li>
+									<img src="./assets/img/footer/payments/04.svg" alt="Image">
+								</li>
+							</ul>
+						</div>
+						<p class="bottom-footer__copyright">Copyright © 2025 RifBar</p>
+					</div>
+				</div>
+			</footer>
+			<div data-fls-popup="age" aria-hidden="true" class="popup" data-fls-popup-lock="">
+				<div data-fls-popup-wrapper="" class="popup__wrapper">
+					<div data-fls-popup-body="" class="popup__body _width-one">
+						<div data-fls-popup-content="" class="popup__content">
+							<div class="popup__logo">
+								<svg width="86" height="72" viewbox="0 0 86 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.9179 64.5544H16.9318V71.9949H17.9179V64.5544ZM27.3447 65.5471H34.6525V64.5544H26.3585V71.9949H27.3447V68.7685H33.282V67.7757H27.3397V65.5471H27.3447ZM28.1084 34.9338L54.5175 49.7339C58.4166 51.917 60.1311 54.8193 60.4699 56.5161C62.771 53.2238 64.9861 42.5314 55.888 37.2992L28.518 22.6206C26.6316 21.6582 26.0349 21.1416 25.7719 19.146C25.0942 19.2827 24.2395 19.9513 23.5821 21.9216C21.2355 28.8253 23.7338 32.4924 28.1084 34.9287V34.9338ZM28.073 49.7643C28.073 52.2969 30.1212 54.3432 32.6447 54.3432C35.1683 54.3432 37.2165 52.2918 37.2165 49.7643C37.2165 47.2369 35.1683 45.1855 32.6447 45.1855C30.1161 45.1855 28.073 47.2419 28.073 49.7643ZM51.3921 70.1867V69.5941C51.3921 69.0775 51.1746 68.6115 50.8307 68.2772C51.1797 67.9479 51.3921 67.4769 51.3921 66.9603V66.3676C51.3921 65.3648 50.5829 64.5594 49.5917 64.5594H43.0981V72H49.5917C50.5829 72 51.3921 71.1896 51.3921 70.1918V70.1867ZM44.0843 65.5471H49.5967C50.0468 65.5471 50.411 65.9118 50.411 66.3676V66.9603C50.411 67.4161 50.0468 67.7808 49.5967 67.7808H44.0843V65.542V65.5471ZM44.0843 68.7736H49.5967C50.0468 68.7736 50.411 69.1382 50.411 69.5941V70.1867C50.411 70.6375 50.0468 71.0072 49.5967 71.0072H44.0843V68.7685V68.7736ZM66.2757 70.3539L67.1404 71.9949H68.2531L64.3387 64.5544H63.2261L59.3118 71.9949H60.4244L61.2892 70.3539H66.2757ZM63.7774 65.618L65.7497 69.3662H61.805L63.7774 65.618ZM83.5463 70.3184C84.3706 70.1513 84.9977 69.4168 84.9977 68.5456V66.3676C84.9977 65.3698 84.1885 64.5594 83.1973 64.5594H76.7038V71.9949H77.6899V70.3539H82.201L83.8143 71.9949H85.2L83.5463 70.3184ZM77.6849 69.3662V65.5471H83.1973C83.6474 65.5471 84.0115 65.9118 84.0115 66.3676V68.5456C84.0115 68.9964 83.6474 69.3662 83.1973 69.3662H77.6849ZM28.1084 15.7828L54.5175 30.5829C58.4166 32.766 60.1311 35.6682 60.4699 37.365C62.771 34.0727 64.9861 23.3804 55.888 18.1482L28.518 3.47464C26.6316 2.51228 26.0349 1.99564 25.7719 0C25.0942 0.136757 24.2395 0.805346 23.5821 2.77566C21.2355 9.67935 23.7338 13.3515 28.1084 15.7828ZM6.8425 70.3184C7.66684 70.1513 8.29394 69.4168 8.29394 68.5456V66.3676C8.29394 65.3698 7.48478 64.5594 6.49355 64.5594H0V71.9949H0.98617V70.3539H5.49726L7.11054 71.9949H8.49623L6.8425 70.3184ZM0.981112 69.3662V65.5471H6.49355C6.94365 65.5471 7.30777 65.9118 7.30777 66.3676V68.5456C7.30777 68.9964 6.94365 69.3662 6.49355 69.3662H0.981112Z" fill="black"></path>
+								</svg>
+							</div>
+							<div class="popup__title">Age Verification</div>
+							<div class="popup__info">
+								Products are not to be sold to persons
+								<br>
+								under the age of
+								<span data-fls-age-limit="">18</span>
+								.
+							</div>
+							<div class="popup__actions _one">
+								<button type="button" class="btn-01 _medium btn-acces" data-fls-popup-close="">
+									<span>
+										Yes, I’m over
+										<span data-fls-age-limit="">18</span>
+									</span>
+								</button>
+								<a class="btn-01 _medium _light" href="https://www.google.com/">
+									<span>
+										No, I’m under
+										<span data-fls-age-limit="">18</span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-fls-popup="subback" aria-hidden="true" class="popup">
+				<div data-fls-popup-wrapper="" class="popup__wrapper">
+					<div data-fls-popup-body="" class="popup__body">
+						<div data-fls-popup-content="" class="popup__content">
+							<div class="popup__logo">
+								<svg width="86" height="72" viewbox="0 0 86 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.9179 64.5544H16.9318V71.9949H17.9179V64.5544ZM27.3447 65.5471H34.6525V64.5544H26.3585V71.9949H27.3447V68.7685H33.282V67.7757H27.3397V65.5471H27.3447ZM28.1084 34.9338L54.5175 49.7339C58.4166 51.917 60.1311 54.8193 60.4699 56.5161C62.771 53.2238 64.9861 42.5314 55.888 37.2992L28.518 22.6206C26.6316 21.6582 26.0349 21.1416 25.7719 19.146C25.0942 19.2827 24.2395 19.9513 23.5821 21.9216C21.2355 28.8253 23.7338 32.4924 28.1084 34.9287V34.9338ZM28.073 49.7643C28.073 52.2969 30.1212 54.3432 32.6447 54.3432C35.1683 54.3432 37.2165 52.2918 37.2165 49.7643C37.2165 47.2369 35.1683 45.1855 32.6447 45.1855C30.1161 45.1855 28.073 47.2419 28.073 49.7643ZM51.3921 70.1867V69.5941C51.3921 69.0775 51.1746 68.6115 50.8307 68.2772C51.1797 67.9479 51.3921 67.4769 51.3921 66.9603V66.3676C51.3921 65.3648 50.5829 64.5594 49.5917 64.5594H43.0981V72H49.5917C50.5829 72 51.3921 71.1896 51.3921 70.1918V70.1867ZM44.0843 65.5471H49.5967C50.0468 65.5471 50.411 65.9118 50.411 66.3676V66.9603C50.411 67.4161 50.0468 67.7808 49.5967 67.7808H44.0843V65.542V65.5471ZM44.0843 68.7736H49.5967C50.0468 68.7736 50.411 69.1382 50.411 69.5941V70.1867C50.411 70.6375 50.0468 71.0072 49.5967 71.0072H44.0843V68.7685V68.7736ZM66.2757 70.3539L67.1404 71.9949H68.2531L64.3387 64.5544H63.2261L59.3118 71.9949H60.4244L61.2892 70.3539H66.2757ZM63.7774 65.618L65.7497 69.3662H61.805L63.7774 65.618ZM83.5463 70.3184C84.3706 70.1513 84.9977 69.4168 84.9977 68.5456V66.3676C84.9977 65.3698 84.1885 64.5594 83.1973 64.5594H76.7038V71.9949H77.6899V70.3539H82.201L83.8143 71.9949H85.2L83.5463 70.3184ZM77.6849 69.3662V65.5471H83.1973C83.6474 65.5471 84.0115 65.9118 84.0115 66.3676V68.5456C84.0115 68.9964 83.6474 69.3662 83.1973 69.3662H77.6849ZM28.1084 15.7828L54.5175 30.5829C58.4166 32.766 60.1311 35.6682 60.4699 37.365C62.771 34.0727 64.9861 23.3804 55.888 18.1482L28.518 3.47464C26.6316 2.51228 26.0349 1.99564 25.7719 0C25.0942 0.136757 24.2395 0.805346 23.5821 2.77566C21.2355 9.67935 23.7338 13.3515 28.1084 15.7828ZM6.8425 70.3184C7.66684 70.1513 8.29394 69.4168 8.29394 68.5456V66.3676C8.29394 65.3698 7.48478 64.5594 6.49355 64.5594H0V71.9949H0.98617V70.3539H5.49726L7.11054 71.9949H8.49623L6.8425 70.3184ZM0.981112 69.3662V65.5471H6.49355C6.94365 65.5471 7.30777 65.9118 7.30777 66.3676V68.5456C7.30777 68.9964 6.94365 69.3662 6.49355 69.3662H0.981112Z" fill="black"></path>
+								</svg>
+							</div>
+							<div class="popup__title">thanks for subscribing</div>
+							<div class="popup__info">
+								You’ll be the first to know about new products, exclusive promotions and special
+					discounts.
+							</div>
+							<div class="popup__actions _two">
+								<button type="button" class="btn-01 _medium" data-fls-popup-close="">Continue</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-fls-popup="cntctback" aria-hidden="true" class="popup">
+				<div data-fls-popup-wrapper="" class="popup__wrapper">
+					<div data-fls-popup-body="" class="popup__body">
+						<div data-fls-popup-content="" class="popup__content">
+							<div class="popup__logo">
+								<svg width="86" height="72" viewbox="0 0 86 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.9179 64.5544H16.9318V71.9949H17.9179V64.5544ZM27.3447 65.5471H34.6525V64.5544H26.3585V71.9949H27.3447V68.7685H33.282V67.7757H27.3397V65.5471H27.3447ZM28.1084 34.9338L54.5175 49.7339C58.4166 51.917 60.1311 54.8193 60.4699 56.5161C62.771 53.2238 64.9861 42.5314 55.888 37.2992L28.518 22.6206C26.6316 21.6582 26.0349 21.1416 25.7719 19.146C25.0942 19.2827 24.2395 19.9513 23.5821 21.9216C21.2355 28.8253 23.7338 32.4924 28.1084 34.9287V34.9338ZM28.073 49.7643C28.073 52.2969 30.1212 54.3432 32.6447 54.3432C35.1683 54.3432 37.2165 52.2918 37.2165 49.7643C37.2165 47.2369 35.1683 45.1855 32.6447 45.1855C30.1161 45.1855 28.073 47.2419 28.073 49.7643ZM51.3921 70.1867V69.5941C51.3921 69.0775 51.1746 68.6115 50.8307 68.2772C51.1797 67.9479 51.3921 67.4769 51.3921 66.9603V66.3676C51.3921 65.3648 50.5829 64.5594 49.5917 64.5594H43.0981V72H49.5917C50.5829 72 51.3921 71.1896 51.3921 70.1918V70.1867ZM44.0843 65.5471H49.5967C50.0468 65.5471 50.411 65.9118 50.411 66.3676V66.9603C50.411 67.4161 50.0468 67.7808 49.5967 67.7808H44.0843V65.542V65.5471ZM44.0843 68.7736H49.5967C50.0468 68.7736 50.411 69.1382 50.411 69.5941V70.1867C50.411 70.6375 50.0468 71.0072 49.5967 71.0072H44.0843V68.7685V68.7736ZM66.2757 70.3539L67.1404 71.9949H68.2531L64.3387 64.5544H63.2261L59.3118 71.9949H60.4244L61.2892 70.3539H66.2757ZM63.7774 65.618L65.7497 69.3662H61.805L63.7774 65.618ZM83.5463 70.3184C84.3706 70.1513 84.9977 69.4168 84.9977 68.5456V66.3676C84.9977 65.3698 84.1885 64.5594 83.1973 64.5594H76.7038V71.9949H77.6899V70.3539H82.201L83.8143 71.9949H85.2L83.5463 70.3184ZM77.6849 69.3662V65.5471H83.1973C83.6474 65.5471 84.0115 65.9118 84.0115 66.3676V68.5456C84.0115 68.9964 83.6474 69.3662 83.1973 69.3662H77.6849ZM28.1084 15.7828L54.5175 30.5829C58.4166 32.766 60.1311 35.6682 60.4699 37.365C62.771 34.0727 64.9861 23.3804 55.888 18.1482L28.518 3.47464C26.6316 2.51228 26.0349 1.99564 25.7719 0C25.0942 0.136757 24.2395 0.805346 23.5821 2.77566C21.2355 9.67935 23.7338 13.3515 28.1084 15.7828ZM6.8425 70.3184C7.66684 70.1513 8.29394 69.4168 8.29394 68.5456V66.3676C8.29394 65.3698 7.48478 64.5594 6.49355 64.5594H0V71.9949H0.98617V70.3539H5.49726L7.11054 71.9949H8.49623L6.8425 70.3184ZM0.981112 69.3662V65.5471H6.49355C6.94365 65.5471 7.30777 65.9118 7.30777 66.3676V68.5456C7.30777 68.9964 6.94365 69.3662 6.49355 69.3662H0.981112Z" fill="black"></path>
+								</svg>
+							</div>
+							<div class="popup__title">MESSAGE SENT</div>
+							<div class="popup__info">Thanks for reaching out.
+					Our team will get back to you shortly.</div>
+							<div class="popup__actions _two">
+								<button type="button" class="btn-01 _medium" data-fls-popup-close="">Continue</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-fls-popup="bsback" aria-hidden="true" class="popup">
+				<div data-fls-popup-wrapper="" class="popup__wrapper">
+					<div data-fls-popup-body="" class="popup__body">
+						<div data-fls-popup-content="" class="popup__content">
+							<div class="popup__logo">
+								<svg width="86" height="72" viewbox="0 0 86 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.9179 64.5544H16.9318V71.9949H17.9179V64.5544ZM27.3447 65.5471H34.6525V64.5544H26.3585V71.9949H27.3447V68.7685H33.282V67.7757H27.3397V65.5471H27.3447ZM28.1084 34.9338L54.5175 49.7339C58.4166 51.917 60.1311 54.8193 60.4699 56.5161C62.771 53.2238 64.9861 42.5314 55.888 37.2992L28.518 22.6206C26.6316 21.6582 26.0349 21.1416 25.7719 19.146C25.0942 19.2827 24.2395 19.9513 23.5821 21.9216C21.2355 28.8253 23.7338 32.4924 28.1084 34.9287V34.9338ZM28.073 49.7643C28.073 52.2969 30.1212 54.3432 32.6447 54.3432C35.1683 54.3432 37.2165 52.2918 37.2165 49.7643C37.2165 47.2369 35.1683 45.1855 32.6447 45.1855C30.1161 45.1855 28.073 47.2419 28.073 49.7643ZM51.3921 70.1867V69.5941C51.3921 69.0775 51.1746 68.6115 50.8307 68.2772C51.1797 67.9479 51.3921 67.4769 51.3921 66.9603V66.3676C51.3921 65.3648 50.5829 64.5594 49.5917 64.5594H43.0981V72H49.5917C50.5829 72 51.3921 71.1896 51.3921 70.1918V70.1867ZM44.0843 65.5471H49.5967C50.0468 65.5471 50.411 65.9118 50.411 66.3676V66.9603C50.411 67.4161 50.0468 67.7808 49.5967 67.7808H44.0843V65.542V65.5471ZM44.0843 68.7736H49.5967C50.0468 68.7736 50.411 69.1382 50.411 69.5941V70.1867C50.411 70.6375 50.0468 71.0072 49.5967 71.0072H44.0843V68.7685V68.7736ZM66.2757 70.3539L67.1404 71.9949H68.2531L64.3387 64.5544H63.2261L59.3118 71.9949H60.4244L61.2892 70.3539H66.2757ZM63.7774 65.618L65.7497 69.3662H61.805L63.7774 65.618ZM83.5463 70.3184C84.3706 70.1513 84.9977 69.4168 84.9977 68.5456V66.3676C84.9977 65.3698 84.1885 64.5594 83.1973 64.5594H76.7038V71.9949H77.6899V70.3539H82.201L83.8143 71.9949H85.2L83.5463 70.3184ZM77.6849 69.3662V65.5471H83.1973C83.6474 65.5471 84.0115 65.9118 84.0115 66.3676V68.5456C84.0115 68.9964 83.6474 69.3662 83.1973 69.3662H77.6849ZM28.1084 15.7828L54.5175 30.5829C58.4166 32.766 60.1311 35.6682 60.4699 37.365C62.771 34.0727 64.9861 23.3804 55.888 18.1482L28.518 3.47464C26.6316 2.51228 26.0349 1.99564 25.7719 0C25.0942 0.136757 24.2395 0.805346 23.5821 2.77566C21.2355 9.67935 23.7338 13.3515 28.1084 15.7828ZM6.8425 70.3184C7.66684 70.1513 8.29394 69.4168 8.29394 68.5456V66.3676C8.29394 65.3698 7.48478 64.5594 6.49355 64.5594H0V71.9949H0.98617V70.3539H5.49726L7.11054 71.9949H8.49623L6.8425 70.3184ZM0.981112 69.3662V65.5471H6.49355C6.94365 65.5471 7.30777 65.9118 7.30777 66.3676V68.5456C7.30777 68.9964 6.94365 69.3662 6.49355 69.3662H0.981112Z" fill="black"></path>
+								</svg>
+							</div>
+							<div class="popup__title">THANK YOU!</div>
+							<div class="popup__info">
+								Your request has been submitted.
+								<br>
+								Our team will get in touch with you shortly.
+							</div>
+							<div class="popup__actions _two">
+								<button type="button" class="btn-01 _medium" data-fls-popup-close="">Continue</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
